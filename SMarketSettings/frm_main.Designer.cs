@@ -528,6 +528,7 @@
             this.btn_load.TabIndex = 6;
             this.btn_load.Text = "Загрузить";
             this.btn_load.UseVisualStyleBackColor = true;
+            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
             // 
             // btn_upload
             // 

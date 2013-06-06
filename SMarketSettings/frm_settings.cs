@@ -26,31 +26,19 @@ namespace SMarketSettings
         //Загрузка данных из файла
         private void frm_settings_Load(object sender, EventArgs e)
         {
-            string[] tmp;
             try
             {
-                number_of_objects = int.Parse(cfg.IniReadValue("objects", "numberofobjects"));
+                number_of_objects = POScnt.get_num_of_pos();
             }
             catch
             {
             }
             try
             {
-                if (number_of_objects != 0)
+                objectp = POScnt.get_obj();
+
+                if (number_of_objects >= 0)
                 {
-                    objectp = new ObjectPOS[number_of_objects];
-                    for (int i = 0; i < number_of_objects; i++)
-                    {
-                        objectp[i] = new ObjectPOS();
-                        objectp[i].name = cfg.IniReadValue("objects", "obj" + (i + 1));
-                        objectp[i].pos_number = int.Parse(cfg.IniReadValue(objectp[i].name, "numofpos"));
-                        tmp = new string[objectp[i].pos_number];
-                        for (int z = 0; z < objectp[i].pos_number; z++)
-                        {
-                            tmp[z] = cfg.IniReadValue(objectp[i].name, "pos" + (z + 1));
-                        }
-                        objectp[i].pos = tmp;
-                    }
                     for (int i = 0; i < number_of_objects; i++)
                     {
                         lst_objects.Items.Add(objectp[i].name);
@@ -60,6 +48,7 @@ namespace SMarketSettings
                 }
                 else
                 {
+                    number_of_objects = 0;
                     MessageBox.Show("Неполадки с файлом настроек или он пуст!\nФайл будет персоздан", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     File.Delete(Directory.GetCurrentDirectory() + "\\cfg.ini");
                     using (File.Create(Directory.GetCurrentDirectory() + "\\cfg.ini"))
@@ -69,6 +58,7 @@ namespace SMarketSettings
             }
             catch
             {
+                number_of_objects = 0;
                 MessageBox.Show("Неполадки с файлом настроек или он пуст!\nФайл будет персоздан", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 File.Delete(Directory.GetCurrentDirectory() + "\\cfg.ini");
                 using (File.Create(Directory.GetCurrentDirectory() + "\\cfg.ini"))
