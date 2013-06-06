@@ -101,6 +101,12 @@
     <Compile Include="frm_settings.Designer.cs">
       <DependentUpon>frm_settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_wait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_wait.Designer.cs">
+      <DependentUpon>frm_wait.cs</DependentUpon>
+    </Compile>
     <Compile Include="INIread.cs" />
     <Compile Include="ObjectPOS.cs" />
     <Compile Include="Program.cs" />
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_settings.resx">
       <DependentUpon>frm_settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_wait.resx">
+      <DependentUpon>frm_wait.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

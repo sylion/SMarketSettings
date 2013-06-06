@@ -146,6 +146,7 @@
             this.btn_ok.TabIndex = 12;
             this.btn_ok.Text = "ОК";
             this.btn_ok.UseVisualStyleBackColor = true;
+            this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
             // 
             // frm_check_comment
             // 
@@ -174,6 +175,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Настройка комментариев";
+            this.Load += new System.EventHandler(this.frm_check_comment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

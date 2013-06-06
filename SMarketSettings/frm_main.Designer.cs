@@ -95,6 +95,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(578, 391);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -532,12 +533,14 @@
             // 
             // btn_upload
             // 
+            this.btn_upload.Enabled = false;
             this.btn_upload.Location = new System.Drawing.Point(221, 398);
             this.btn_upload.Name = "btn_upload";
             this.btn_upload.Size = new System.Drawing.Size(75, 23);
             this.btn_upload.TabIndex = 7;
             this.btn_upload.Text = "Выгрузить";
             this.btn_upload.UseVisualStyleBackColor = true;
+            this.btn_upload.Click += new System.EventHandler(this.btn_upload_Click);
             // 
             // frm_main
             // 
