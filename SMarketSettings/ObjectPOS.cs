@@ -54,14 +54,17 @@ namespace POS
             {
                 temp = pos;
                 Array.Resize(ref temp, temp.Length + 1);
+                temp[pos_number] = address;
+                pos = temp;
+                pos_number++;
             }
             catch
             {
                 temp = new string[1];
+                temp[pos_number - 1] = address;
+                pos = temp;
+                pos_number++;
             }
-            temp[pos_number] = address;
-            pos = temp;
-            pos_number++;
         }
         //Получение всех объектов из файла
         

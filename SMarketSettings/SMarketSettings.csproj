@@ -95,6 +95,18 @@
     <Compile Include="frm_check_comment.Designer.cs">
       <DependentUpon>frm_check_comment.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_newoperator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_newoperator.Designer.cs">
+      <DependentUpon>frm_newoperator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_setPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_setPassword.Designer.cs">
+      <DependentUpon>frm_setPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +121,7 @@
     </Compile>
     <Compile Include="INIread.cs" />
     <Compile Include="ObjectPOS.cs" />
+    <Compile Include="Operators.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_add.resx">
@@ -122,6 +135,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_check_comment.resx">
       <DependentUpon>frm_check_comment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_newoperator.resx">
+      <DependentUpon>frm_newoperator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_setPassword.resx">
+      <DependentUpon>frm_setPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_settings.resx">
       <DependentUpon>frm_settings.cs</DependentUpon>

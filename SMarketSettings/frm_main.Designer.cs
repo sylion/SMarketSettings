@@ -38,29 +38,30 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.c13 = new System.Windows.Forms.CheckBox();
+            this.c12 = new System.Windows.Forms.CheckBox();
+            this.c11 = new System.Windows.Forms.CheckBox();
+            this.c10 = new System.Windows.Forms.CheckBox();
+            this.c9 = new System.Windows.Forms.CheckBox();
+            this.c8 = new System.Windows.Forms.CheckBox();
+            this.c7 = new System.Windows.Forms.CheckBox();
+            this.c6 = new System.Windows.Forms.CheckBox();
+            this.c5 = new System.Windows.Forms.CheckBox();
+            this.c4 = new System.Windows.Forms.CheckBox();
+            this.c3 = new System.Windows.Forms.CheckBox();
+            this.c2 = new System.Windows.Forms.CheckBox();
+            this.c1 = new System.Windows.Forms.CheckBox();
+            this.chk_once_operator = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_newOp = new System.Windows.Forms.Button();
+            this.btn_del_operator = new System.Windows.Forms.Button();
+            this.btn_cancel_pwd = new System.Windows.Forms.Button();
+            this.chk_notactive = new System.Windows.Forms.CheckBox();
+            this.tb_cpwd = new System.Windows.Forms.TextBox();
+            this.tb_number = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_name = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -90,6 +91,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Enabled = false;
             this.tabControl1.Location = new System.Drawing.Point(0, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -155,7 +157,7 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.groupBox2);
-            this.tabPage3.Controls.Add(this.checkBox2);
+            this.tabPage3.Controls.Add(this.chk_once_operator);
             this.tabPage3.Controls.Add(this.groupBox1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -167,19 +169,19 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.richTextBox1);
-            this.groupBox2.Controls.Add(this.checkBox12);
-            this.groupBox2.Controls.Add(this.checkBox13);
-            this.groupBox2.Controls.Add(this.checkBox14);
-            this.groupBox2.Controls.Add(this.checkBox15);
-            this.groupBox2.Controls.Add(this.checkBox11);
-            this.groupBox2.Controls.Add(this.checkBox7);
-            this.groupBox2.Controls.Add(this.checkBox8);
-            this.groupBox2.Controls.Add(this.checkBox9);
-            this.groupBox2.Controls.Add(this.checkBox10);
-            this.groupBox2.Controls.Add(this.checkBox6);
-            this.groupBox2.Controls.Add(this.checkBox5);
-            this.groupBox2.Controls.Add(this.checkBox4);
-            this.groupBox2.Controls.Add(this.checkBox3);
+            this.groupBox2.Controls.Add(this.c13);
+            this.groupBox2.Controls.Add(this.c12);
+            this.groupBox2.Controls.Add(this.c11);
+            this.groupBox2.Controls.Add(this.c10);
+            this.groupBox2.Controls.Add(this.c9);
+            this.groupBox2.Controls.Add(this.c8);
+            this.groupBox2.Controls.Add(this.c7);
+            this.groupBox2.Controls.Add(this.c6);
+            this.groupBox2.Controls.Add(this.c5);
+            this.groupBox2.Controls.Add(this.c4);
+            this.groupBox2.Controls.Add(this.c3);
+            this.groupBox2.Controls.Add(this.c2);
+            this.groupBox2.Controls.Add(this.c1);
             this.groupBox2.Location = new System.Drawing.Point(8, 123);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(559, 236);
@@ -194,157 +196,158 @@
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(550, 115);
             this.richTextBox1.TabIndex = 13;
-            this.richTextBox1.Text = "";
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
-            // checkBox12
+            // c13
             // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(408, 75);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(130, 17);
-            this.checkBox12.TabIndex = 12;
-            this.checkBox12.Text = "Аннулирование чека";
-            this.checkBox12.UseVisualStyleBackColor = true;
+            this.c13.AutoSize = true;
+            this.c13.Location = new System.Drawing.Point(408, 75);
+            this.c13.Name = "c13";
+            this.c13.Size = new System.Drawing.Size(130, 17);
+            this.c13.TabIndex = 12;
+            this.c13.Text = "Аннулирование чека";
+            this.c13.UseVisualStyleBackColor = true;
             // 
-            // checkBox13
+            // c12
             // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Location = new System.Drawing.Point(408, 57);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(149, 17);
-            this.checkBox13.TabIndex = 11;
-            this.checkBox13.Text = "Аннулирование позиций";
-            this.checkBox13.UseVisualStyleBackColor = true;
+            this.c12.AutoSize = true;
+            this.c12.Location = new System.Drawing.Point(408, 57);
+            this.c12.Name = "c12";
+            this.c12.Size = new System.Drawing.Size(149, 17);
+            this.c12.TabIndex = 11;
+            this.c12.Text = "Аннулирование позиций";
+            this.c12.UseVisualStyleBackColor = true;
             // 
-            // checkBox14
+            // c11
             // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.Location = new System.Drawing.Point(408, 38);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(68, 17);
-            this.checkBox14.TabIndex = 10;
-            this.checkBox14.Text = "Возврат";
-            this.checkBox14.UseVisualStyleBackColor = true;
+            this.c11.AutoSize = true;
+            this.c11.Location = new System.Drawing.Point(408, 38);
+            this.c11.Name = "c11";
+            this.c11.Size = new System.Drawing.Size(68, 17);
+            this.c11.TabIndex = 10;
+            this.c11.Text = "Возврат";
+            this.c11.UseVisualStyleBackColor = true;
             // 
-            // checkBox15
+            // c10
             // 
-            this.checkBox15.AutoSize = true;
-            this.checkBox15.Location = new System.Drawing.Point(408, 19);
-            this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(124, 17);
-            this.checkBox15.TabIndex = 9;
-            this.checkBox15.Text = "Просмотр всех цен";
-            this.checkBox15.UseVisualStyleBackColor = true;
+            this.c10.AutoSize = true;
+            this.c10.Location = new System.Drawing.Point(408, 19);
+            this.c10.Name = "c10";
+            this.c10.Size = new System.Drawing.Size(124, 17);
+            this.c10.TabIndex = 9;
+            this.c10.Text = "Просмотр всех цен";
+            this.c10.UseVisualStyleBackColor = true;
             // 
-            // checkBox11
+            // c9
             // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(191, 92);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(143, 17);
-            this.checkBox11.TabIndex = 8;
-            this.checkBox11.Text = "Изменение уровня цен";
-            this.checkBox11.UseVisualStyleBackColor = true;
+            this.c9.AutoSize = true;
+            this.c9.Location = new System.Drawing.Point(191, 92);
+            this.c9.Name = "c9";
+            this.c9.Size = new System.Drawing.Size(143, 17);
+            this.c9.TabIndex = 8;
+            this.c9.Text = "Изменение уровня цен";
+            this.c9.UseVisualStyleBackColor = true;
             // 
-            // checkBox7
+            // c8
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(191, 75);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(182, 17);
-            this.checkBox7.TabIndex = 7;
-            this.checkBox7.Text = "Просмотр количества товаров";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.c8.AutoSize = true;
+            this.c8.Location = new System.Drawing.Point(191, 75);
+            this.c8.Name = "c8";
+            this.c8.Size = new System.Drawing.Size(182, 17);
+            this.c8.TabIndex = 7;
+            this.c8.Text = "Просмотр количества товаров";
+            this.c8.UseVisualStyleBackColor = true;
             // 
-            // checkBox8
+            // c7
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(191, 57);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(208, 17);
-            this.checkBox8.TabIndex = 6;
-            this.checkBox8.Text = "Конец смены и фискальные отчеты";
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.c7.AutoSize = true;
+            this.c7.Location = new System.Drawing.Point(191, 57);
+            this.c7.Name = "c7";
+            this.c7.Size = new System.Drawing.Size(208, 17);
+            this.c7.TabIndex = 6;
+            this.c7.Text = "Конец смены и фискальные отчеты";
+            this.c7.UseVisualStyleBackColor = true;
             // 
-            // checkBox9
+            // c6
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(191, 38);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(203, 17);
-            this.checkBox9.TabIndex = 5;
-            this.checkBox9.Text = "Предоставление скидок/надбавок";
-            this.checkBox9.UseVisualStyleBackColor = true;
+            this.c6.AutoSize = true;
+            this.c6.Location = new System.Drawing.Point(191, 38);
+            this.c6.Name = "c6";
+            this.c6.Size = new System.Drawing.Size(203, 17);
+            this.c6.TabIndex = 5;
+            this.c6.Text = "Предоставление скидок/надбавок";
+            this.c6.UseVisualStyleBackColor = true;
             // 
-            // checkBox10
+            // c5
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(191, 19);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(190, 17);
-            this.checkBox10.TabIndex = 4;
-            this.checkBox10.Text = "Просмотр протоколов и отчетов";
-            this.checkBox10.UseVisualStyleBackColor = true;
+            this.c5.AutoSize = true;
+            this.c5.Location = new System.Drawing.Point(191, 19);
+            this.c5.Name = "c5";
+            this.c5.Size = new System.Drawing.Size(190, 17);
+            this.c5.TabIndex = 4;
+            this.c5.Text = "Просмотр протоколов и отчетов";
+            this.c5.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // c4
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(9, 76);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(123, 17);
-            this.checkBox6.TabIndex = 3;
-            this.checkBox6.Text = "Конфигурирование";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.c4.AutoSize = true;
+            this.c4.Location = new System.Drawing.Point(9, 76);
+            this.c4.Name = "c4";
+            this.c4.Size = new System.Drawing.Size(123, 17);
+            this.c4.TabIndex = 3;
+            this.c4.Text = "Конфигурирование";
+            this.c4.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // c3
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(9, 58);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(181, 17);
-            this.checkBox5.TabIndex = 2;
-            this.checkBox5.Text = "Прием любых видов платежей";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.c3.AutoSize = true;
+            this.c3.Location = new System.Drawing.Point(9, 58);
+            this.c3.Name = "c3";
+            this.c3.Size = new System.Drawing.Size(181, 17);
+            this.c3.TabIndex = 2;
+            this.c3.Text = "Прием любых видов платежей";
+            this.c3.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // c2
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(9, 39);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(165, 17);
-            this.checkBox4.TabIndex = 1;
-            this.checkBox4.Text = "Выдача наличных из кассы";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.c2.AutoSize = true;
+            this.c2.Location = new System.Drawing.Point(9, 39);
+            this.c2.Name = "c2";
+            this.c2.Size = new System.Drawing.Size(165, 17);
+            this.c2.TabIndex = 1;
+            this.c2.Text = "Выдача наличных из кассы";
+            this.c2.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // c1
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(9, 20);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(130, 17);
-            this.checkBox3.TabIndex = 0;
-            this.checkBox3.Text = "Администрирование";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.c1.AutoSize = true;
+            this.c1.Location = new System.Drawing.Point(9, 20);
+            this.c1.Name = "c1";
+            this.c1.Size = new System.Drawing.Size(130, 17);
+            this.c1.TabIndex = 0;
+            this.c1.Text = "Администрирование";
+            this.c1.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chk_once_operator
             // 
-            this.checkBox2.Location = new System.Drawing.Point(416, 9);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(157, 35);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Запрос прав для запрещенной операции";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chk_once_operator.Location = new System.Drawing.Point(416, 9);
+            this.chk_once_operator.Name = "chk_once_operator";
+            this.chk_once_operator.Size = new System.Drawing.Size(157, 35);
+            this.chk_once_operator.TabIndex = 1;
+            this.chk_once_operator.Text = "Запрос прав для запрещенной операции";
+            this.chk_once_operator.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.btn_newOp);
+            this.groupBox1.Controls.Add(this.btn_del_operator);
+            this.groupBox1.Controls.Add(this.btn_cancel_pwd);
+            this.groupBox1.Controls.Add(this.chk_notactive);
+            this.groupBox1.Controls.Add(this.tb_cpwd);
+            this.groupBox1.Controls.Add(this.tb_number);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cb_name);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.shapeContainer1);
             this.groupBox1.Location = new System.Drawing.Point(8, 3);
@@ -354,47 +357,59 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Оператор";
             // 
-            // button2
+            // btn_newOp
             // 
-            this.button2.Location = new System.Drawing.Point(265, 73);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Удалить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_newOp.Location = new System.Drawing.Point(265, 86);
+            this.btn_newOp.Name = "btn_newOp";
+            this.btn_newOp.Size = new System.Drawing.Size(116, 23);
+            this.btn_newOp.TabIndex = 10;
+            this.btn_newOp.Text = "Создать";
+            this.btn_newOp.UseVisualStyleBackColor = true;
+            this.btn_newOp.Click += new System.EventHandler(this.btn_newOp_Click);
             // 
-            // button1
+            // btn_del_operator
             // 
-            this.button1.Location = new System.Drawing.Point(265, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Отменить пароль";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_del_operator.Location = new System.Drawing.Point(265, 62);
+            this.btn_del_operator.Name = "btn_del_operator";
+            this.btn_del_operator.Size = new System.Drawing.Size(116, 23);
+            this.btn_del_operator.TabIndex = 9;
+            this.btn_del_operator.Text = "Удалить";
+            this.btn_del_operator.UseVisualStyleBackColor = true;
+            this.btn_del_operator.Click += new System.EventHandler(this.btn_del_operator_Click);
             // 
-            // checkBox1
+            // btn_cancel_pwd
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(265, 17);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(84, 17);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "Не активен";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.btn_cancel_pwd.Location = new System.Drawing.Point(265, 37);
+            this.btn_cancel_pwd.Name = "btn_cancel_pwd";
+            this.btn_cancel_pwd.Size = new System.Drawing.Size(116, 23);
+            this.btn_cancel_pwd.TabIndex = 8;
+            this.btn_cancel_pwd.Text = "Отменить пароль";
+            this.btn_cancel_pwd.UseVisualStyleBackColor = true;
+            this.btn_cancel_pwd.Click += new System.EventHandler(this.btn_cancel_pwd_Click);
             // 
-            // textBox2
+            // chk_notactive
             // 
-            this.textBox2.Location = new System.Drawing.Point(98, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.chk_notactive.AutoSize = true;
+            this.chk_notactive.Location = new System.Drawing.Point(265, 17);
+            this.chk_notactive.Name = "chk_notactive";
+            this.chk_notactive.Size = new System.Drawing.Size(84, 17);
+            this.chk_notactive.TabIndex = 7;
+            this.chk_notactive.Text = "Не активен";
+            this.chk_notactive.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tb_cpwd
             // 
-            this.textBox1.Location = new System.Drawing.Point(98, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.tb_cpwd.Location = new System.Drawing.Point(98, 75);
+            this.tb_cpwd.Name = "tb_cpwd";
+            this.tb_cpwd.Size = new System.Drawing.Size(100, 20);
+            this.tb_cpwd.TabIndex = 5;
+            // 
+            // tb_number
+            // 
+            this.tb_number.Location = new System.Drawing.Point(98, 49);
+            this.tb_number.Name = "tb_number";
+            this.tb_number.Size = new System.Drawing.Size(100, 20);
+            this.tb_number.TabIndex = 4;
             // 
             // label3
             // 
@@ -414,13 +429,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Номер кассира";
             // 
-            // comboBox1
+            // cb_name
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(60, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(177, 21);
-            this.comboBox1.TabIndex = 1;
+            this.cb_name.FormattingEnabled = true;
+            this.cb_name.Location = new System.Drawing.Point(60, 13);
+            this.cb_name.Name = "cb_name";
+            this.cb_name.Size = new System.Drawing.Size(177, 21);
+            this.cb_name.TabIndex = 1;
+            this.cb_name.SelectedIndexChanged += new System.EventHandler(this.cb_name_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -510,6 +526,7 @@
             this.btn_apply.TabIndex = 2;
             this.btn_apply.Text = "Применить";
             this.btn_apply.UseVisualStyleBackColor = true;
+            this.btn_apply.Click += new System.EventHandler(this.btn_apply_Click);
             // 
             // btn_close
             // 
@@ -586,29 +603,29 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.CheckBox checkBox12;
-        private System.Windows.Forms.CheckBox checkBox13;
-        private System.Windows.Forms.CheckBox checkBox14;
-        private System.Windows.Forms.CheckBox checkBox15;
-        private System.Windows.Forms.CheckBox checkBox11;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox c13;
+        private System.Windows.Forms.CheckBox c12;
+        private System.Windows.Forms.CheckBox c11;
+        private System.Windows.Forms.CheckBox c10;
+        private System.Windows.Forms.CheckBox c9;
+        private System.Windows.Forms.CheckBox c8;
+        private System.Windows.Forms.CheckBox c7;
+        private System.Windows.Forms.CheckBox c6;
+        private System.Windows.Forms.CheckBox c5;
+        private System.Windows.Forms.CheckBox c4;
+        private System.Windows.Forms.CheckBox c3;
+        private System.Windows.Forms.CheckBox c2;
+        private System.Windows.Forms.CheckBox c1;
+        private System.Windows.Forms.CheckBox chk_once_operator;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_del_operator;
+        private System.Windows.Forms.Button btn_cancel_pwd;
+        private System.Windows.Forms.CheckBox chk_notactive;
+        private System.Windows.Forms.TextBox tb_cpwd;
+        private System.Windows.Forms.TextBox tb_number;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_name;
         private System.Windows.Forms.Label label1;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
@@ -624,6 +641,7 @@
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Button btn_load;
         private System.Windows.Forms.Button btn_upload;
+        private System.Windows.Forms.Button btn_newOp;
     }
 }
 
