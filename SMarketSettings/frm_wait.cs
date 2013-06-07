@@ -43,13 +43,14 @@ namespace SMarketSettings
             opt.DontFragment = true;
             string data = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
             byte[] buffer = Encoding.ASCII.GetBytes (data);
-            int timeout = 120;
+            int timeout = 800;
             PingReply reply = png.Send(address, timeout, buffer, opt);
             if (reply.Status == IPStatus.Success)
             {
                 if (Directory.Exists(@"\\" + address + @"\POS\Command\"))
                 {
                     address = @"\\" + address + @"\POS\Command\req18";
+                    using (File.Create(address)) { }
                 }
                 else
                 {
@@ -62,7 +63,6 @@ namespace SMarketSettings
                 MessageBox.Show("Нету связи с POS терминалом или папка Command не доступна", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
-            using (File.Create(address)) { }
             bg_worker.WorkerSupportsCancellation = true;
             bg_worker.RunWorkerAsync();
         }
