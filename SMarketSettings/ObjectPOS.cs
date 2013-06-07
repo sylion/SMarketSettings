@@ -61,7 +61,7 @@ namespace POS
             catch
             {
                 temp = new string[1];
-                temp[pos_number - 1] = address;
+                temp[pos_number] = address;
                 pos = temp;
                 pos_number++;
             }

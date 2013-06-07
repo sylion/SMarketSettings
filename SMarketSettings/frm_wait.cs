@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Net.NetworkInformation;
 
 namespace SMarketSettings
 {
@@ -36,13 +37,30 @@ namespace SMarketSettings
             frm_main frm = (frm_main)this.Owner;
             address = frm.current_pos;
             curr_pos = address;
-            if (Directory.Exists(@"\\" + address + @"\POS\Command\"))
+            //Ping POS
+            Ping png = new Ping();
+            PingOptions opt = new PingOptions();
+            opt.DontFragment = true;
+            string data = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            byte[] buffer = Encoding.ASCII.GetBytes (data);
+            int timeout = 120;
+            PingReply reply = png.Send(address, timeout, buffer, opt);
+            if (reply.Status == IPStatus.Success)
             {
-                address = @"\\" + address + @"\POS\Command\req18";
+                if (Directory.Exists(@"\\" + address + @"\POS\Command\"))
+                {
+                    address = @"\\" + address + @"\POS\Command\req18";
+                }
+                else
+                {
+                    MessageBox.Show("Нету связи с POS терминалом или папка Command не доступна", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                }
             }
             else
             {
                 MessageBox.Show("Нету связи с POS терминалом или папка Command не доступна", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
             }
             using (File.Create(address)) { }
             bg_worker.WorkerSupportsCancellation = true;
@@ -80,6 +98,11 @@ namespace SMarketSettings
         private void bg_worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
+        }
+
+        private void frm_wait_Load(object sender, EventArgs e)
+        {
+            timer.Start();
         }
     }
 }

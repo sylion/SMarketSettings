@@ -57,7 +57,7 @@
             // 
             // timer
             // 
-            this.timer.Interval = 7000;
+            this.timer.Interval = 10000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // bg_worker
@@ -82,6 +82,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Загрузка настроек";
+            this.Load += new System.EventHandler(this.frm_wait_Load);
             this.Shown += new System.EventHandler(this.frm_wait_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
