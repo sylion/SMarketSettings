@@ -207,6 +207,7 @@
             this.c13.TabIndex = 12;
             this.c13.Text = "Аннулирование чека";
             this.c13.UseVisualStyleBackColor = true;
+            this.c13.CheckedChanged += new System.EventHandler(this.c13_CheckedChanged);
             // 
             // c12
             // 
@@ -217,6 +218,7 @@
             this.c12.TabIndex = 11;
             this.c12.Text = "Аннулирование позиций";
             this.c12.UseVisualStyleBackColor = true;
+            this.c12.CheckedChanged += new System.EventHandler(this.c12_CheckedChanged);
             // 
             // c11
             // 
@@ -227,6 +229,7 @@
             this.c11.TabIndex = 10;
             this.c11.Text = "Возврат";
             this.c11.UseVisualStyleBackColor = true;
+            this.c11.CheckedChanged += new System.EventHandler(this.c11_CheckedChanged);
             // 
             // c10
             // 
@@ -237,6 +240,7 @@
             this.c10.TabIndex = 9;
             this.c10.Text = "Просмотр всех цен";
             this.c10.UseVisualStyleBackColor = true;
+            this.c10.CheckedChanged += new System.EventHandler(this.c10_CheckedChanged);
             // 
             // c9
             // 
@@ -247,6 +251,7 @@
             this.c9.TabIndex = 8;
             this.c9.Text = "Изменение уровня цен";
             this.c9.UseVisualStyleBackColor = true;
+            this.c9.CheckedChanged += new System.EventHandler(this.c9_CheckedChanged);
             // 
             // c8
             // 
@@ -257,6 +262,7 @@
             this.c8.TabIndex = 7;
             this.c8.Text = "Просмотр количества товаров";
             this.c8.UseVisualStyleBackColor = true;
+            this.c8.CheckedChanged += new System.EventHandler(this.c8_CheckedChanged);
             // 
             // c7
             // 
@@ -267,6 +273,7 @@
             this.c7.TabIndex = 6;
             this.c7.Text = "Конец смены и фискальные отчеты";
             this.c7.UseVisualStyleBackColor = true;
+            this.c7.CheckedChanged += new System.EventHandler(this.c7_CheckedChanged);
             // 
             // c6
             // 
@@ -277,6 +284,7 @@
             this.c6.TabIndex = 5;
             this.c6.Text = "Предоставление скидок/надбавок";
             this.c6.UseVisualStyleBackColor = true;
+            this.c6.CheckedChanged += new System.EventHandler(this.c6_CheckedChanged);
             // 
             // c5
             // 
@@ -287,6 +295,7 @@
             this.c5.TabIndex = 4;
             this.c5.Text = "Просмотр протоколов и отчетов";
             this.c5.UseVisualStyleBackColor = true;
+            this.c5.CheckedChanged += new System.EventHandler(this.c5_CheckedChanged);
             // 
             // c4
             // 
@@ -297,6 +306,7 @@
             this.c4.TabIndex = 3;
             this.c4.Text = "Конфигурирование";
             this.c4.UseVisualStyleBackColor = true;
+            this.c4.CheckedChanged += new System.EventHandler(this.c4_CheckedChanged);
             // 
             // c3
             // 
@@ -307,6 +317,7 @@
             this.c3.TabIndex = 2;
             this.c3.Text = "Прием любых видов платежей";
             this.c3.UseVisualStyleBackColor = true;
+            this.c3.CheckedChanged += new System.EventHandler(this.c3_CheckedChanged);
             // 
             // c2
             // 
@@ -317,6 +328,7 @@
             this.c2.TabIndex = 1;
             this.c2.Text = "Выдача наличных из кассы";
             this.c2.UseVisualStyleBackColor = true;
+            this.c2.CheckedChanged += new System.EventHandler(this.c2_CheckedChanged);
             // 
             // c1
             // 
@@ -327,6 +339,7 @@
             this.c1.TabIndex = 0;
             this.c1.Text = "Администрирование";
             this.c1.UseVisualStyleBackColor = true;
+            this.c1.CheckedChanged += new System.EventHandler(this.c1_CheckedChanged);
             // 
             // chk_once_operator
             // 
