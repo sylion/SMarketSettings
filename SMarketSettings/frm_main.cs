@@ -64,6 +64,7 @@ namespace SMarketSettings
             }
             tabControl1.Enabled = true;
             tabControl1.SelectedIndex = 0;
+            this.Text = "Настройки SMarket - " + current_obj + " - " + current_pos;  
         }
         //Выгрузка настроек
         private void btn_upload_Click(object sender, EventArgs e)
@@ -82,6 +83,7 @@ namespace SMarketSettings
             current_obj = "";
             btn_upload.Enabled = false;
             tabControl1.Enabled = false;
+            this.Text = "Настройки SMarket";
         }
         //Блокировка вкладок и загрузка данных по вкладкам
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
