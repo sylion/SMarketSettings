@@ -68,12 +68,33 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label7 = new System.Windows.Forms.Label();
             this.btn_settings = new System.Windows.Forms.Button();
             this.btn_apply = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_load = new System.Windows.Forms.Button();
             this.btn_upload = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.chk_orderisactive = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tb_serveraddress = new System.Windows.Forms.TextBox();
+            this.tb_serverport = new System.Windows.Forms.TextBox();
+            this.tb_basename = new System.Windows.Forms.TextBox();
+            this.tb_baselogin = new System.Windows.Forms.TextBox();
+            this.tb_basepwd = new System.Windows.Forms.TextBox();
+            this.chk_servicemode = new System.Windows.Forms.CheckBox();
+            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tb_precheckcommit1 = new System.Windows.Forms.TextBox();
+            this.tb_precheckcommit2 = new System.Windows.Forms.TextBox();
+            this.tb_precheckcommit3 = new System.Windows.Forms.TextBox();
+            this.tb_precheckcommit4 = new System.Windows.Forms.TextBox();
+            this.tb_precheckcommit5 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -82,6 +103,8 @@
             this.groupBox1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -502,24 +525,14 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.label7);
+            this.tabPage5.Controls.Add(this.groupBox4);
+            this.tabPage5.Controls.Add(this.groupBox3);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(570, 365);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Заказы";
             this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(43, 169);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(485, 26);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Тут пока ничего не работает, но скоро будет :)";
             // 
             // btn_settings
             // 
@@ -572,6 +585,204 @@
             this.btn_upload.UseVisualStyleBackColor = true;
             this.btn_upload.Click += new System.EventHandler(this.btn_upload_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.tb_basepwd);
+            this.groupBox3.Controls.Add(this.tb_baselogin);
+            this.groupBox3.Controls.Add(this.tb_basename);
+            this.groupBox3.Controls.Add(this.tb_serverport);
+            this.groupBox3.Controls.Add(this.tb_serveraddress);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.chk_orderisactive);
+            this.groupBox3.Location = new System.Drawing.Point(8, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(260, 201);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.tb_precheckcommit5);
+            this.groupBox4.Controls.Add(this.tb_precheckcommit4);
+            this.groupBox4.Controls.Add(this.tb_precheckcommit3);
+            this.groupBox4.Controls.Add(this.tb_precheckcommit2);
+            this.groupBox4.Controls.Add(this.tb_precheckcommit1);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.chk_servicemode);
+            this.groupBox4.Controls.Add(this.shapeContainer2);
+            this.groupBox4.Location = new System.Drawing.Point(274, 3);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(288, 201);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            // 
+            // chk_orderisactive
+            // 
+            this.chk_orderisactive.AutoSize = true;
+            this.chk_orderisactive.Location = new System.Drawing.Point(6, 15);
+            this.chk_orderisactive.Name = "chk_orderisactive";
+            this.chk_orderisactive.Size = new System.Drawing.Size(187, 17);
+            this.chk_orderisactive.TabIndex = 0;
+            this.chk_orderisactive.Text = "Активировать систему заказов";
+            this.chk_orderisactive.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 52);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Адрес сервера:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 83);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Порт:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 112);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(61, 13);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Имя базы:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 139);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Логин:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 168);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(48, 13);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Пароль:";
+            // 
+            // tb_serveraddress
+            // 
+            this.tb_serveraddress.Location = new System.Drawing.Point(97, 49);
+            this.tb_serveraddress.Name = "tb_serveraddress";
+            this.tb_serveraddress.Size = new System.Drawing.Size(157, 20);
+            this.tb_serveraddress.TabIndex = 6;
+            // 
+            // tb_serverport
+            // 
+            this.tb_serverport.Location = new System.Drawing.Point(97, 80);
+            this.tb_serverport.Name = "tb_serverport";
+            this.tb_serverport.Size = new System.Drawing.Size(157, 20);
+            this.tb_serverport.TabIndex = 7;
+            // 
+            // tb_basename
+            // 
+            this.tb_basename.Location = new System.Drawing.Point(97, 109);
+            this.tb_basename.Name = "tb_basename";
+            this.tb_basename.Size = new System.Drawing.Size(157, 20);
+            this.tb_basename.TabIndex = 8;
+            // 
+            // tb_baselogin
+            // 
+            this.tb_baselogin.Location = new System.Drawing.Point(97, 136);
+            this.tb_baselogin.Name = "tb_baselogin";
+            this.tb_baselogin.Size = new System.Drawing.Size(157, 20);
+            this.tb_baselogin.TabIndex = 9;
+            // 
+            // tb_basepwd
+            // 
+            this.tb_basepwd.Location = new System.Drawing.Point(97, 165);
+            this.tb_basepwd.Name = "tb_basepwd";
+            this.tb_basepwd.Size = new System.Drawing.Size(157, 20);
+            this.tb_basepwd.TabIndex = 10;
+            // 
+            // chk_servicemode
+            // 
+            this.chk_servicemode.AutoSize = true;
+            this.chk_servicemode.Location = new System.Drawing.Point(7, 16);
+            this.chk_servicemode.Name = "chk_servicemode";
+            this.chk_servicemode.Size = new System.Drawing.Size(127, 17);
+            this.chk_servicemode.TabIndex = 0;
+            this.chk_servicemode.Text = "Режим оффицианта";
+            this.chk_servicemode.UseVisualStyleBackColor = true;
+            // 
+            // shapeContainer2
+            // 
+            this.shapeContainer2.Location = new System.Drawing.Point(3, 16);
+            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer2.Name = "shapeContainer2";
+            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape2});
+            this.shapeContainer2.Size = new System.Drawing.Size(282, 182);
+            this.shapeContainer2.TabIndex = 1;
+            this.shapeContainer2.TabStop = false;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 2;
+            this.lineShape2.X2 = 279;
+            this.lineShape2.Y1 = 26;
+            this.lineShape2.Y2 = 26;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(7, 52);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(111, 13);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Комментарий счета:";
+            // 
+            // tb_precheckcommit1
+            // 
+            this.tb_precheckcommit1.Location = new System.Drawing.Point(7, 69);
+            this.tb_precheckcommit1.Name = "tb_precheckcommit1";
+            this.tb_precheckcommit1.Size = new System.Drawing.Size(275, 20);
+            this.tb_precheckcommit1.TabIndex = 3;
+            // 
+            // tb_precheckcommit2
+            // 
+            this.tb_precheckcommit2.Location = new System.Drawing.Point(7, 95);
+            this.tb_precheckcommit2.Name = "tb_precheckcommit2";
+            this.tb_precheckcommit2.Size = new System.Drawing.Size(275, 20);
+            this.tb_precheckcommit2.TabIndex = 4;
+            // 
+            // tb_precheckcommit3
+            // 
+            this.tb_precheckcommit3.Location = new System.Drawing.Point(7, 121);
+            this.tb_precheckcommit3.Name = "tb_precheckcommit3";
+            this.tb_precheckcommit3.Size = new System.Drawing.Size(275, 20);
+            this.tb_precheckcommit3.TabIndex = 5;
+            // 
+            // tb_precheckcommit4
+            // 
+            this.tb_precheckcommit4.Location = new System.Drawing.Point(7, 147);
+            this.tb_precheckcommit4.Name = "tb_precheckcommit4";
+            this.tb_precheckcommit4.Size = new System.Drawing.Size(275, 20);
+            this.tb_precheckcommit4.TabIndex = 6;
+            // 
+            // tb_precheckcommit5
+            // 
+            this.tb_precheckcommit5.Location = new System.Drawing.Point(7, 173);
+            this.tb_precheckcommit5.Name = "tb_precheckcommit5";
+            this.tb_precheckcommit5.Size = new System.Drawing.Size(275, 20);
+            this.tb_precheckcommit5.TabIndex = 7;
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -603,7 +814,10 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -648,13 +862,34 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_settings;
         private System.Windows.Forms.Button btn_apply;
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Button btn_load;
         private System.Windows.Forms.Button btn_upload;
         private System.Windows.Forms.Button btn_newOp;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox tb_precheckcommit5;
+        private System.Windows.Forms.TextBox tb_precheckcommit4;
+        private System.Windows.Forms.TextBox tb_precheckcommit3;
+        private System.Windows.Forms.TextBox tb_precheckcommit2;
+        private System.Windows.Forms.TextBox tb_precheckcommit1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.CheckBox chk_servicemode;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox tb_basepwd;
+        private System.Windows.Forms.TextBox tb_baselogin;
+        private System.Windows.Forms.TextBox tb_basename;
+        private System.Windows.Forms.TextBox tb_serverport;
+        private System.Windows.Forms.TextBox tb_serveraddress;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox chk_orderisactive;
     }
 }
 

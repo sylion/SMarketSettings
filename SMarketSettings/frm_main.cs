@@ -27,6 +27,8 @@ namespace SMarketSettings
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Для теста, потом убрать
+            //tabControl1.Enabled = true;
         }
         //Вызов формы комментариев чека
         private void btn_check_comment_Click(object sender, EventArgs e)
@@ -88,13 +90,13 @@ namespace SMarketSettings
         //Блокировка вкладок и загрузка данных по вкладкам
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedIndex == 1 || tabControl1.SelectedIndex == 3 || tabControl1.SelectedIndex == 4)
+            IniFile settings = new IniFile(Directory.GetCurrentDirectory() + "\\settings\\" + current_pos + ".ini");
+            if (tabControl1.SelectedIndex == 1 || tabControl1.SelectedIndex == 3)
             {
                 tabControl1.SelectedIndex = 0;
             }
             if (tabControl1.SelectedIndex == 2)
             {
-                IniFile settings = new IniFile(Directory.GetCurrentDirectory() + "\\settings\\" + current_pos + ".ini");
                 Operators = OperatorsControl.LoadOperators(current_pos);
                 cb_name.Items.Clear();
                 for (int i = 0; i < Operators.Length; i++)
@@ -110,6 +112,27 @@ namespace SMarketSettings
                 }
                 chk_once_operator.Checked = bool.Parse(settings.IniReadValue("operators", "UseOnceOperator"));
                 cb_name.SelectedIndex = 0;
+            }
+            if (tabControl1.SelectedIndex == 4)
+            {
+                try
+                {
+                    chk_orderisactive.Checked = bool.Parse(settings.IniReadValue("Restaurant", "order_isactive"));
+                    tb_serveraddress.Text = settings.IniReadValue("Restaurant", "order_host");
+                    tb_serverport.Text = settings.IniReadValue("Restaurant", "order_port");
+                    tb_basename.Text = settings.IniReadValue("Restaurant", "order_bname");
+                    tb_baselogin.Text = settings.IniReadValue("Restaurant", "order_login");
+                    tb_basepwd.Text = settings.IniReadValue("Restaurant", "order_pwd");
+                    chk_servicemode.Checked = bool.Parse(settings.IniReadValue("Restaurant", "servicemode"));
+                    tb_precheckcommit1.Text = settings.IniReadValue("Restaurant", "precheck_coommit1");
+                    tb_precheckcommit2.Text = settings.IniReadValue("Restaurant", "precheck_coommit2");
+                    tb_precheckcommit3.Text = settings.IniReadValue("Restaurant", "precheck_coommit3");
+                    tb_precheckcommit4.Text = settings.IniReadValue("Restaurant", "precheck_coommit4");
+                    tb_precheckcommit5.Text = settings.IniReadValue("Restaurant", "precheck_coommit5");
+                }
+                catch
+                {
+                }
             }
         }
         //Выбор оператора
@@ -331,6 +354,21 @@ namespace SMarketSettings
             {
                 settings.IniWriteValue("operators", "UseOnceOperator", chk_once_operator.Checked.ToString());
                 OperatorsControl.SaveOperators(current_pos, Operators);
+            }
+            if (tabControl1.SelectedIndex == 4)
+            {
+                settings.IniWriteValue("Restaurant", "order_isactive", chk_orderisactive.Checked.ToString());
+                settings.IniWriteValue("Restaurant", "order_host", tb_serveraddress.Text);
+                settings.IniWriteValue("Restaurant", "order_port", tb_serverport.Text);
+                settings.IniWriteValue("Restaurant", "order_bname", tb_basename.Text);
+                settings.IniWriteValue("Restaurant", "order_login", tb_baselogin.Text);
+                settings.IniWriteValue("Restaurant", "order_pwd", tb_basepwd.Text);
+                settings.IniWriteValue("Restaurant", "servicemode", chk_servicemode.Checked.ToString());
+                settings.IniWriteValue("Restaurant", "precheck_coommit1", tb_precheckcommit1.Text);
+                settings.IniWriteValue("Restaurant", "precheck_coommit2", tb_precheckcommit2.Text);
+                settings.IniWriteValue("Restaurant", "precheck_coommit3", tb_precheckcommit3.Text);
+                settings.IniWriteValue("Restaurant", "precheck_coommit4", tb_precheckcommit4.Text);
+                settings.IniWriteValue("Restaurant", "precheck_coommit5", tb_precheckcommit5.Text);
             }
         }
         //Админ права
