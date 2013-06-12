@@ -42,7 +42,7 @@ namespace SMarketSettings
             IniFile settings = new IniFile(Directory.GetCurrentDirectory() + "\\settings\\" + address + ".ini");
             int count;
             count = int.Parse(settings.IniReadValue("operators", "count"));
-            
+
             Operator[] op = new Operator[count];
             for (int i = 0; i < count; i++)
             {
@@ -112,34 +112,36 @@ namespace SMarketSettings
             int count = Op.Length;
             for (int i = 0; i < count; i++)
             {
-                if (!Op[i].ForDelete && !Op[i].New)
+                settings.IniWriteValue("op" + i, "name", Op[i].Name);
+                settings.IniWriteValue("op" + i, "id", Op[i].ID.ToString());
+                settings.IniWriteValue("op" + i, "edCashPsw", Op[i].CashPwd);
+                settings.IniWriteValue("op" + i, "chNotActive", Op[i].NotActive.ToString());
+                settings.IniWriteValue("op" + i, "mask", Op[i].Mask.ToString());
+                settings.IniWriteValue("op" + i, "password", Op[i].Password);
+                if (!Op[i].New)
                 {
-                    settings.IniWriteValue("op" + i, "name", Op[i].Name);
                     settings.IniWriteValue("op" + i, "code", Op[i].Code.ToString());
-                    settings.IniWriteValue("op" + i, "id", Op[i].ID.ToString());
-                    settings.IniWriteValue("op" + i, "edCashPsw", Op[i].CashPwd);
-                    settings.IniWriteValue("op" + i, "chNotActive", Op[i].NotActive.ToString());
-                    settings.IniWriteValue("op" + i, "mask", Op[i].Mask.ToString());
-                    settings.IniWriteValue("op" + i, "password", Op[i].Password);
-                    if (Op[i].ForDelete && Op[i].Updated)
+                    if (Op[i].ForDelete)
                     {
+                        settings.IniWriteValue("op" + i, "New", "False");
                         settings.IniWriteValue("op" + i, "ForDelete", "True");
                         settings.IniWriteValue("op" + i, "Updated", "False");
                     }
                     else
-                    if (Op[i].New && Op[i].Updated)
                     {
-                        settings.IniWriteValue("op" + i, "Updated", "False");
-                        settings.IniWriteValue("op" + i, "New", "True");
-                    }
-                    else
-                    {
-                        settings.IniWriteValue("op" + i, "ForDelete", Op[i].ForDelete.ToString());
+                        settings.IniWriteValue("op" + i, "New", "False");
+                        settings.IniWriteValue("op" + i, "ForDelete", "False");
                         settings.IniWriteValue("op" + i, "Updated", "True");
-                        settings.IniWriteValue("op" + i, "New", Op[i].New.ToString());
                     }
                 }
+                if (Op[i].New)
+                {
+                    settings.IniWriteValue("op" + i, "New", "True");
+                    settings.IniWriteValue("op" + i, "ForDelete", "False");
+                    settings.IniWriteValue("op" + i, "Updated", "False");
+                }
             }
+            settings.IniWriteValue("operators", "count", count.ToString());
         }
     }
 }

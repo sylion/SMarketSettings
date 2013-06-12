@@ -290,6 +290,8 @@ namespace SMarketSettings
             {
                 Operators = OperatorsControl.addOperator(Operators, TempName, TempPwd);
                 Operators[Operators.Length - 1].New = true;
+                Operators[Operators.Length - 1].ForDelete = false;
+                Operators[Operators.Length - 1].Updated = false;
                 cb_name.Items.Clear();
                 for (int i = 0; i < Operators.Length; i++)
                 {
@@ -302,7 +304,7 @@ namespace SMarketSettings
                         cb_name.Items.Add(Operators[i].Name + " - ForDelete");
                     }
                 }
-                cb_name.SelectedIndex = 0;
+                cb_name.SelectedIndex = Operators.Length - 1;
             }
         }
         //Удаление оператора
@@ -549,6 +551,33 @@ namespace SMarketSettings
             else
             {
                 Operators[z].Mask -= 4096;
+            }
+        }
+        //Установка флага неактивен
+        private void chk_notactive_CheckedChanged(object sender, EventArgs e)
+        {
+            Operators[z].NotActive = chk_notactive.Checked;
+        }
+        //изменение ID
+        private void tb_number_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Operators[z].ID = int.Parse(tb_number.Text);
+            }
+            catch
+            {
+            }
+        }
+        //Изменение пароля кассы
+        private void tb_cpwd_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Operators[z].CashPwd = tb_cpwd.Text;
+            }
+            catch
+            {
             }
         }
     }
