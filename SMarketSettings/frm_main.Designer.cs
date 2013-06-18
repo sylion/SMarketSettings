@@ -95,6 +95,9 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_load = new System.Windows.Forms.Button();
             this.btn_upload = new System.Windows.Forms.Button();
+            this.chk_magnet = new System.Windows.Forms.CheckBox();
+            this.tb_pingtimeout = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -179,6 +182,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.chk_magnet);
             this.tabPage3.Controls.Add(this.groupBox2);
             this.tabPage3.Controls.Add(this.chk_once_operator);
             this.tabPage3.Controls.Add(this.groupBox1);
@@ -628,6 +632,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.tb_pingtimeout);
+            this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.tb_basepwd);
             this.groupBox3.Controls.Add(this.tb_baselogin);
             this.groupBox3.Controls.Add(this.tb_basename);
@@ -641,7 +647,7 @@
             this.groupBox3.Controls.Add(this.chk_orderisactive);
             this.groupBox3.Location = new System.Drawing.Point(8, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(260, 201);
+            this.groupBox3.Size = new System.Drawing.Size(260, 218);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             // 
@@ -786,6 +792,31 @@
             this.btn_upload.UseVisualStyleBackColor = true;
             this.btn_upload.Click += new System.EventHandler(this.btn_upload_Click);
             // 
+            // chk_magnet
+            // 
+            this.chk_magnet.Location = new System.Drawing.Point(416, 60);
+            this.chk_magnet.Name = "chk_magnet";
+            this.chk_magnet.Size = new System.Drawing.Size(151, 49);
+            this.chk_magnet.TabIndex = 3;
+            this.chk_magnet.Text = "Авторизация по скан-коду/магнитной карте";
+            this.chk_magnet.UseVisualStyleBackColor = true;
+            // 
+            // tb_pingtimeout
+            // 
+            this.tb_pingtimeout.Location = new System.Drawing.Point(97, 192);
+            this.tb_pingtimeout.Name = "tb_pingtimeout";
+            this.tb_pingtimeout.Size = new System.Drawing.Size(157, 20);
+            this.tb_pingtimeout.TabIndex = 12;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(3, 195);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(67, 13);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "ping timeout:";
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -893,6 +924,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox chk_orderisactive;
+        private System.Windows.Forms.CheckBox chk_magnet;
+        private System.Windows.Forms.TextBox tb_pingtimeout;
+        private System.Windows.Forms.Label label13;
     }
 }
 

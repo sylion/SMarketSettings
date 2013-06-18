@@ -114,6 +114,10 @@ namespace SMarketSettings
             {
                 settings.IniWriteValue("op" + i, "name", Op[i].Name);
                 settings.IniWriteValue("op" + i, "id", Op[i].ID.ToString());
+                if (Op[i].CashPwd == "")
+                {
+                    Op[i].CashPwd = "1";
+                }
                 settings.IniWriteValue("op" + i, "edCashPsw", Op[i].CashPwd);
                 settings.IniWriteValue("op" + i, "chNotActive", Op[i].NotActive.ToString());
                 settings.IniWriteValue("op" + i, "mask", Op[i].Mask.ToString());

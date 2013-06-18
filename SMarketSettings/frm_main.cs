@@ -27,8 +27,6 @@ namespace SMarketSettings
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Для теста, потом убрать
-            //tabControl1.Enabled = true;
         }
         //Вызов формы комментариев чека
         private void btn_check_comment_Click(object sender, EventArgs e)
@@ -91,10 +89,12 @@ namespace SMarketSettings
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             IniFile settings = new IniFile(Directory.GetCurrentDirectory() + "\\settings\\" + current_pos + ".ini");
+            //Основные
             if (tabControl1.SelectedIndex == 1 || tabControl1.SelectedIndex == 3)
             {
                 tabControl1.SelectedIndex = 0;
             }
+            //Операторы
             if (tabControl1.SelectedIndex == 2)
             {
                 Operators = OperatorsControl.LoadOperators(current_pos);
@@ -111,8 +111,10 @@ namespace SMarketSettings
                     }
                 }
                 chk_once_operator.Checked = bool.Parse(settings.IniReadValue("operators", "UseOnceOperator"));
+                chk_magnet.Checked = bool.Parse(settings.IniReadValue("operators", "MagnetCode"));
                 cb_name.SelectedIndex = 0;
             }
+            //Заказы
             if (tabControl1.SelectedIndex == 4)
             {
                 try
@@ -123,6 +125,7 @@ namespace SMarketSettings
                     tb_basename.Text = settings.IniReadValue("Restaurant", "order_bname");
                     tb_baselogin.Text = settings.IniReadValue("Restaurant", "order_login");
                     tb_basepwd.Text = settings.IniReadValue("Restaurant", "order_pwd");
+                    tb_pingtimeout.Text = settings.IniReadValue("Restaurant", "ping_timeout");
                     chk_servicemode.Checked = bool.Parse(settings.IniReadValue("Restaurant", "servicemode"));
                     tb_precheckcommit1.Text = settings.IniReadValue("Restaurant", "precheck_coommit1");
                     tb_precheckcommit2.Text = settings.IniReadValue("Restaurant", "precheck_coommit2");
@@ -355,6 +358,7 @@ namespace SMarketSettings
             if (tabControl1.SelectedIndex == 2)
             {
                 settings.IniWriteValue("operators", "UseOnceOperator", chk_once_operator.Checked.ToString());
+                settings.IniWriteValue("operators", "MagnetCode", chk_magnet.Checked.ToString());
                 OperatorsControl.SaveOperators(current_pos, Operators);
             }
             if (tabControl1.SelectedIndex == 4)
@@ -365,6 +369,7 @@ namespace SMarketSettings
                 settings.IniWriteValue("Restaurant", "order_bname", tb_basename.Text);
                 settings.IniWriteValue("Restaurant", "order_login", tb_baselogin.Text);
                 settings.IniWriteValue("Restaurant", "order_pwd", tb_basepwd.Text);
+                settings.IniWriteValue("Restaurant", "ping_timeout", tb_pingtimeout.Text);
                 settings.IniWriteValue("Restaurant", "servicemode", chk_servicemode.Checked.ToString());
                 settings.IniWriteValue("Restaurant", "precheck_coommit1", tb_precheckcommit1.Text);
                 settings.IniWriteValue("Restaurant", "precheck_coommit2", tb_precheckcommit2.Text);
