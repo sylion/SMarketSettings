@@ -71,7 +71,19 @@ namespace SMarketSettings
         {
             if (Directory.Exists(@"\\" + current_pos + @"\POS\In"))
             {
-                File.Move(Directory.GetCurrentDirectory() + "\\Settings\\" + current_pos + ".ini", @"\\" + current_pos + @"\POS\In\Settings.ini");
+                try
+                {
+                    File.Move(Directory.GetCurrentDirectory() + "\\Settings\\" + current_pos + ".ini", @"\\" + current_pos + @"\POS\In\Settings.ini");
+                }
+                catch
+                {
+                    if (MessageBox.Show("На терминал уже были отправлены настройки которые он еще не применил, заменить их новыми?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        File.Delete(@"\\" + current_pos + @"\POS\In\Settings.ini");
+                        File.Move(Directory.GetCurrentDirectory() + "\\Settings\\" + current_pos + ".ini", @"\\" + current_pos + @"\POS\In\Settings.ini");
+                    }
+
+                }
             }
             else
             {
@@ -151,7 +163,7 @@ namespace SMarketSettings
                 btn_del_operator.Enabled = true;
             }
 
-            if (Operators[cb_name.SelectedIndex].Password == "")
+            if (!Operators[cb_name.SelectedIndex].HasPassword)
             {
                 btn_cancel_pwd.Text = "Создать пароль";
             }
@@ -295,6 +307,7 @@ namespace SMarketSettings
                 Operators[Operators.Length - 1].New = true;
                 Operators[Operators.Length - 1].ForDelete = false;
                 Operators[Operators.Length - 1].Updated = false;
+                Operators[Operators.Length - 1].NewPassword = true;
                 cb_name.Items.Clear();
                 for (int i = 0; i < Operators.Length; i++)
                 {
@@ -331,9 +344,11 @@ namespace SMarketSettings
         //Удаление пароля оператора
         private void btn_cancel_pwd_Click(object sender, EventArgs e)
         {
-            if (Operators[z].Password != "")
+            if (Operators[z].HasPassword)
             {
                 Operators[z].Password = "";
+                Operators[z].NewPassword = true;
+                Operators[z].HasPassword = false;
                 btn_cancel_pwd.Text = "Создать пароль";
             }
             else
@@ -344,6 +359,8 @@ namespace SMarketSettings
                 if (setpwd.DialogResult == System.Windows.Forms.DialogResult.OK)
                 {
                     Operators[z].Password = TempPwd;
+                    Operators[z].NewPassword = true;
+                    Operators[z].HasPassword = true;
                     if (TempPwd != "")
                     {
                         btn_cancel_pwd.Text = "Отменить пароль";

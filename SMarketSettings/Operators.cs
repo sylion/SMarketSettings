@@ -21,6 +21,8 @@ namespace SMarketSettings
             ID = 0;
             Code = 0;
             Name = "";
+            NewPassword = false;
+            HasPassword = false;
 
         }
         public int Mask { get; set; }
@@ -33,10 +35,13 @@ namespace SMarketSettings
         public bool Updated { get; set; }
         public bool ForDelete { get; set; }
         public bool New { get; set; }
+        public bool NewPassword { get; set; }
+        public bool HasPassword { get; set; }
     }
 
     public static class OperatorsControl
     {
+        //Загрузка операторов из файла
         public static Operator[] LoadOperators(string address)
         {
             IniFile settings = new IniFile(Directory.GetCurrentDirectory() + "\\settings\\" + address + ".ini");
@@ -53,7 +58,8 @@ namespace SMarketSettings
                 op[i].CashPwd = settings.IniReadValue("op" + i, "edCashPsw");
                 op[i].NotActive = bool.Parse(settings.IniReadValue("op" + i, "chNotActive"));
                 op[i].Mask = int.Parse(settings.IniReadValue("op" + i, "mask"));
-                op[i].Password = settings.IniReadValue("op" + i, "password");
+                op[i].HasPassword = bool.Parse(settings.IniReadValue("op" + i, "HasPassword"));
+                op[i].Password = "";
                 try
                 {
                     op[i].ForDelete = bool.Parse(settings.IniReadValue("op" + i, "ForDelete"));
@@ -116,12 +122,20 @@ namespace SMarketSettings
                 settings.IniWriteValue("op" + i, "id", Op[i].ID.ToString());
                 if (Op[i].CashPwd == "")
                 {
-                    Op[i].CashPwd = "1";
+                    Op[i].CashPwd = "0";
                 }
                 settings.IniWriteValue("op" + i, "edCashPsw", Op[i].CashPwd);
                 settings.IniWriteValue("op" + i, "chNotActive", Op[i].NotActive.ToString());
                 settings.IniWriteValue("op" + i, "mask", Op[i].Mask.ToString());
-                settings.IniWriteValue("op" + i, "password", Op[i].Password);
+                if (Op[i].NewPassword)
+                {
+                    settings.IniWriteValue("op" + i, "password", Op[i].Password);
+                    settings.IniWriteValue("op" + i, "NewPassword", Op[i].NewPassword.ToString());
+                }
+                else
+                {
+                    settings.IniWriteValue("op" + i, "NewPassword", Op[i].NewPassword.ToString());
+                }
                 if (!Op[i].New)
                 {
                     settings.IniWriteValue("op" + i, "code", Op[i].Code.ToString());
