@@ -63,8 +63,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cb_name = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -76,8 +74,6 @@
             this.tb_precheckcommit1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.chk_servicemode = new System.Windows.Forms.CheckBox();
-            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tb_basepwd = new System.Windows.Forms.TextBox();
             this.tb_baselogin = new System.Windows.Forms.TextBox();
@@ -389,7 +385,6 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cb_name);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.shapeContainer1);
             this.groupBox1.Location = new System.Drawing.Point(8, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(402, 113);
@@ -490,25 +485,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Имя";
             // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(3, 16);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(396, 94);
-            this.shapeContainer1.TabIndex = 6;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 249;
-            this.lineShape1.X2 = 249;
-            this.lineShape1.Y1 = -4;
-            this.lineShape1.Y2 = 89;
-            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.label6);
@@ -550,7 +526,6 @@
             this.groupBox4.Controls.Add(this.tb_precheckcommit1);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.chk_servicemode);
-            this.groupBox4.Controls.Add(this.shapeContainer2);
             this.groupBox4.Location = new System.Drawing.Point(274, 3);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(288, 201);
@@ -610,25 +585,6 @@
             this.chk_servicemode.TabIndex = 0;
             this.chk_servicemode.Text = "Режим оффицианта";
             this.chk_servicemode.UseVisualStyleBackColor = true;
-            // 
-            // shapeContainer2
-            // 
-            this.shapeContainer2.Location = new System.Drawing.Point(3, 16);
-            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer2.Name = "shapeContainer2";
-            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape2});
-            this.shapeContainer2.Size = new System.Drawing.Size(282, 182);
-            this.shapeContainer2.TabIndex = 1;
-            this.shapeContainer2.TabStop = false;
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 2;
-            this.lineShape2.X2 = 279;
-            this.lineShape2.Y1 = 26;
-            this.lineShape2.Y2 = 26;
             // 
             // groupBox3
             // 
@@ -888,8 +844,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cb_name;
         private System.Windows.Forms.Label label1;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Button btn_check_comment;
@@ -910,8 +864,6 @@
         private System.Windows.Forms.TextBox tb_precheckcommit1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.CheckBox chk_servicemode;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox tb_basepwd;
         private System.Windows.Forms.TextBox tb_baselogin;
