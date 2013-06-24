@@ -31,11 +31,54 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_main));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.edMaxSum = new System.Windows.Forms.TextBox();
+            this.edMaxQuality = new System.Windows.Forms.TextBox();
+            this.edPollPeriod = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.chkMaxSum = new System.Windows.Forms.CheckBox();
+            this.chkMaxQuality = new System.Windows.Forms.CheckBox();
+            this.chkAnyQuality = new System.Windows.Forms.CheckBox();
+            this.chkNoLimit = new System.Windows.Forms.CheckBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.edLogoY = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.chkAutoFiscal = new System.Windows.Forms.CheckBox();
+            this.chkFiscal = new System.Windows.Forms.CheckBox();
+            this.chkNotDisplay = new System.Windows.Forms.CheckBox();
+            this.edRep = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.cbDrawerComport = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.cbPrinter = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cbDeviceComport = new System.Windows.Forms.ComboBox();
+            this.cbDeviceType = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.btn_check_comment = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.edPathServer = new System.Windows.Forms.TextBox();
+            this.edPathOut = new System.Windows.Forms.TextBox();
+            this.edPathIn = new System.Windows.Forms.TextBox();
+            this.edPathCommand = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.chkRegCancel = new System.Windows.Forms.CheckBox();
+            this.chkNewProt = new System.Windows.Forms.CheckBox();
+            this.chkNotFiscal = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.chk_magnet = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.c13 = new System.Windows.Forms.CheckBox();
@@ -75,6 +118,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.chk_servicemode = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tb_pingtimeout = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.tb_basepwd = new System.Windows.Forms.TextBox();
             this.tb_baselogin = new System.Windows.Forms.TextBox();
             this.tb_basename = new System.Windows.Forms.TextBox();
@@ -91,11 +136,13 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_load = new System.Windows.Forms.Button();
             this.btn_upload = new System.Windows.Forms.Button();
-            this.chk_magnet = new System.Windows.Forms.CheckBox();
-            this.tb_pingtimeout = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -123,8 +170,13 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.btn_check_comment);
+            this.tabPage1.Controls.Add(this.groupBox9);
+            this.tabPage1.Controls.Add(this.groupBox8);
+            this.tabPage1.Controls.Add(this.edLogoY);
+            this.tabPage1.Controls.Add(this.label21);
+            this.tabPage1.Controls.Add(this.groupBox7);
+            this.tabPage1.Controls.Add(this.groupBox6);
+            this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -133,26 +185,437 @@
             this.tabPage1.Text = "Общие";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // groupBox9
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(3, 95);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(571, 26);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Тут больше пока ничего не работает, но скоро будет :)";
+            this.groupBox9.Controls.Add(this.edMaxSum);
+            this.groupBox9.Controls.Add(this.edMaxQuality);
+            this.groupBox9.Controls.Add(this.edPollPeriod);
+            this.groupBox9.Controls.Add(this.label22);
+            this.groupBox9.Controls.Add(this.chkMaxSum);
+            this.groupBox9.Controls.Add(this.chkMaxQuality);
+            this.groupBox9.Controls.Add(this.chkAnyQuality);
+            this.groupBox9.Controls.Add(this.chkNoLimit);
+            this.groupBox9.Location = new System.Drawing.Point(324, 199);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(238, 163);
+            this.groupBox9.TabIndex = 7;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Ограничения";
+            // 
+            // edMaxSum
+            // 
+            this.edMaxSum.Location = new System.Drawing.Point(132, 104);
+            this.edMaxSum.Name = "edMaxSum";
+            this.edMaxSum.Size = new System.Drawing.Size(100, 20);
+            this.edMaxSum.TabIndex = 7;
+            // 
+            // edMaxQuality
+            // 
+            this.edMaxQuality.Location = new System.Drawing.Point(132, 81);
+            this.edMaxQuality.Name = "edMaxQuality";
+            this.edMaxQuality.Size = new System.Drawing.Size(100, 20);
+            this.edMaxQuality.TabIndex = 6;
+            // 
+            // edPollPeriod
+            // 
+            this.edPollPeriod.Location = new System.Drawing.Point(171, 134);
+            this.edPollPeriod.Name = "edPollPeriod";
+            this.edPollPeriod.Size = new System.Drawing.Size(61, 20);
+            this.edPollPeriod.TabIndex = 5;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(7, 137);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(138, 13);
+            this.label22.TabIndex = 4;
+            this.label22.Text = "Периодичность обмена, с";
+            // 
+            // chkMaxSum
+            // 
+            this.chkMaxSum.AutoSize = true;
+            this.chkMaxSum.Location = new System.Drawing.Point(7, 106);
+            this.chkMaxSum.Name = "chkMaxSum";
+            this.chkMaxSum.Size = new System.Drawing.Size(92, 17);
+            this.chkMaxSum.TabIndex = 3;
+            this.chkMaxSum.Text = "Макс. сумма";
+            this.chkMaxSum.UseVisualStyleBackColor = true;
+            // 
+            // chkMaxQuality
+            // 
+            this.chkMaxQuality.AutoSize = true;
+            this.chkMaxQuality.Location = new System.Drawing.Point(7, 83);
+            this.chkMaxQuality.Name = "chkMaxQuality";
+            this.chkMaxQuality.Size = new System.Drawing.Size(92, 17);
+            this.chkMaxQuality.TabIndex = 2;
+            this.chkMaxQuality.Text = "Макс. кол-во";
+            this.chkMaxQuality.UseVisualStyleBackColor = true;
+            // 
+            // chkAnyQuality
+            // 
+            this.chkAnyQuality.Enabled = false;
+            this.chkAnyQuality.Location = new System.Drawing.Point(7, 43);
+            this.chkAnyQuality.Name = "chkAnyQuality";
+            this.chkAnyQuality.Size = new System.Drawing.Size(225, 33);
+            this.chkAnyQuality.TabIndex = 1;
+            this.chkAnyQuality.Text = "Продажа дробного кол-ва штучных товаров";
+            this.chkAnyQuality.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.chkAnyQuality.UseVisualStyleBackColor = true;
+            // 
+            // chkNoLimit
+            // 
+            this.chkNoLimit.AutoSize = true;
+            this.chkNoLimit.Location = new System.Drawing.Point(7, 20);
+            this.chkNoLimit.Name = "chkNoLimit";
+            this.chkNoLimit.Size = new System.Drawing.Size(195, 17);
+            this.chkNoLimit.TabIndex = 0;
+            this.chkNoLimit.Text = "Запрет на продажу сверхостатка";
+            this.chkNoLimit.UseVisualStyleBackColor = true;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.comboBox5);
+            this.groupBox8.Controls.Add(this.textBox10);
+            this.groupBox8.Controls.Add(this.label25);
+            this.groupBox8.Controls.Add(this.label24);
+            this.groupBox8.Controls.Add(this.richTextBox2);
+            this.groupBox8.Enabled = false;
+            this.groupBox8.Location = new System.Drawing.Point(324, 24);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(238, 168);
+            this.groupBox8.TabIndex = 6;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Динамический штрихкод";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(171, 13);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(61, 21);
+            this.comboBox5.TabIndex = 4;
+            this.comboBox5.Text = "№";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(7, 53);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(225, 20);
+            this.textBox10.TabIndex = 3;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(7, 36);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(100, 13);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "Маска штрихкода:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(82, 16);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(83, 13);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "Тип штрихкода";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(7, 78);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(225, 85);
+            this.richTextBox2.TabIndex = 0;
+            this.richTextBox2.Text = "В маске можно использовать символы:\n0-9 - цифры\nС - код товара\nW - вес\nS - Цена\nN" +
+    " - не используеться";
+            // 
+            // edLogoY
+            // 
+            this.edLogoY.Location = new System.Drawing.Point(462, 4);
+            this.edLogoY.Name = "edLogoY";
+            this.edLogoY.Size = new System.Drawing.Size(100, 20);
+            this.edLogoY.TabIndex = 5;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(324, 7);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(74, 13);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "Высота лого:";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.chkAutoFiscal);
+            this.groupBox7.Controls.Add(this.chkFiscal);
+            this.groupBox7.Controls.Add(this.chkNotDisplay);
+            this.groupBox7.Controls.Add(this.edRep);
+            this.groupBox7.Controls.Add(this.label20);
+            this.groupBox7.Controls.Add(this.cbDrawerComport);
+            this.groupBox7.Controls.Add(this.label19);
+            this.groupBox7.Controls.Add(this.cbPrinter);
+            this.groupBox7.Controls.Add(this.label18);
+            this.groupBox7.Controls.Add(this.cbDeviceComport);
+            this.groupBox7.Controls.Add(this.cbDeviceType);
+            this.groupBox7.Controls.Add(this.label17);
+            this.groupBox7.Controls.Add(this.btn_check_comment);
+            this.groupBox7.Location = new System.Drawing.Point(3, 208);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(315, 154);
+            this.groupBox7.TabIndex = 3;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Регистратор";
+            // 
+            // chkAutoFiscal
+            // 
+            this.chkAutoFiscal.AutoSize = true;
+            this.chkAutoFiscal.Location = new System.Drawing.Point(123, 128);
+            this.chkAutoFiscal.Name = "chkAutoFiscal";
+            this.chkAutoFiscal.Size = new System.Drawing.Size(138, 17);
+            this.chkAutoFiscal.TabIndex = 12;
+            this.chkAutoFiscal.Text = "Автомаркировка чека";
+            this.chkAutoFiscal.UseVisualStyleBackColor = true;
+            // 
+            // chkFiscal
+            // 
+            this.chkFiscal.AutoSize = true;
+            this.chkFiscal.Location = new System.Drawing.Point(13, 128);
+            this.chkFiscal.Name = "chkFiscal";
+            this.chkFiscal.Size = new System.Drawing.Size(100, 17);
+            this.chkFiscal.TabIndex = 11;
+            this.chkFiscal.Text = "Разделять чек";
+            this.chkFiscal.UseVisualStyleBackColor = true;
+            // 
+            // chkNotDisplay
+            // 
+            this.chkNotDisplay.AutoSize = true;
+            this.chkNotDisplay.Location = new System.Drawing.Point(13, 104);
+            this.chkNotDisplay.Name = "chkNotDisplay";
+            this.chkNotDisplay.Size = new System.Drawing.Size(237, 17);
+            this.chkNotDisplay.TabIndex = 10;
+            this.chkNotDisplay.Text = "Выводить данные на дисплей (IKC-483LT)";
+            this.chkNotDisplay.UseVisualStyleBackColor = true;
+            // 
+            // edRep
+            // 
+            this.edRep.Enabled = false;
+            this.edRep.Location = new System.Drawing.Point(256, 75);
+            this.edRep.Name = "edRep";
+            this.edRep.Size = new System.Drawing.Size(53, 20);
+            this.edRep.TabIndex = 9;
+            this.edRep.Text = "№";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(167, 78);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(73, 13);
+            this.label20.TabIndex = 8;
+            this.label20.Text = "Повтор откр.";
+            // 
+            // cbDrawerComport
+            // 
+            this.cbDrawerComport.Enabled = false;
+            this.cbDrawerComport.FormattingEnabled = true;
+            this.cbDrawerComport.Location = new System.Drawing.Point(92, 75);
+            this.cbDrawerComport.Name = "cbDrawerComport";
+            this.cbDrawerComport.Size = new System.Drawing.Size(62, 21);
+            this.cbDrawerComport.TabIndex = 7;
+            this.cbDrawerComport.Text = "СОМ №";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(10, 78);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(61, 13);
+            this.label19.TabIndex = 6;
+            this.label19.Text = "Ден. ящик";
+            // 
+            // cbPrinter
+            // 
+            this.cbPrinter.Enabled = false;
+            this.cbPrinter.FormattingEnabled = true;
+            this.cbPrinter.Location = new System.Drawing.Point(92, 46);
+            this.cbPrinter.Name = "cbPrinter";
+            this.cbPrinter.Size = new System.Drawing.Size(131, 21);
+            this.cbPrinter.TabIndex = 5;
+            this.cbPrinter.Text = "Zebra...";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(10, 49);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(50, 13);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "Принтер";
+            // 
+            // cbDeviceComport
+            // 
+            this.cbDeviceComport.Enabled = false;
+            this.cbDeviceComport.FormattingEnabled = true;
+            this.cbDeviceComport.Location = new System.Drawing.Point(234, 17);
+            this.cbDeviceComport.Name = "cbDeviceComport";
+            this.cbDeviceComport.Size = new System.Drawing.Size(75, 21);
+            this.cbDeviceComport.TabIndex = 3;
+            this.cbDeviceComport.Text = "СОМ №";
+            // 
+            // cbDeviceType
+            // 
+            this.cbDeviceType.Enabled = false;
+            this.cbDeviceType.FormattingEnabled = true;
+            this.cbDeviceType.Location = new System.Drawing.Point(92, 17);
+            this.cbDeviceType.Name = "cbDeviceType";
+            this.cbDeviceType.Size = new System.Drawing.Size(131, 21);
+            this.cbDeviceType.TabIndex = 2;
+            this.cbDeviceType.Text = "Zebra...";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(10, 20);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(67, 13);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Устройство";
             // 
             // btn_check_comment
             // 
-            this.btn_check_comment.Location = new System.Drawing.Point(230, 141);
+            this.btn_check_comment.Location = new System.Drawing.Point(234, 44);
             this.btn_check_comment.Name = "btn_check_comment";
             this.btn_check_comment.Size = new System.Drawing.Size(75, 23);
             this.btn_check_comment.TabIndex = 0;
             this.btn_check_comment.Text = "Шапка чека";
             this.btn_check_comment.UseVisualStyleBackColor = true;
             this.btn_check_comment.Click += new System.EventHandler(this.btn_check_comment_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.edPathServer);
+            this.groupBox6.Controls.Add(this.edPathOut);
+            this.groupBox6.Controls.Add(this.edPathIn);
+            this.groupBox6.Controls.Add(this.edPathCommand);
+            this.groupBox6.Controls.Add(this.label16);
+            this.groupBox6.Controls.Add(this.label15);
+            this.groupBox6.Controls.Add(this.label14);
+            this.groupBox6.Controls.Add(this.label4);
+            this.groupBox6.Location = new System.Drawing.Point(3, 81);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(315, 127);
+            this.groupBox6.TabIndex = 2;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Обмен данными";
+            // 
+            // edPathServer
+            // 
+            this.edPathServer.Location = new System.Drawing.Point(92, 95);
+            this.edPathServer.Name = "edPathServer";
+            this.edPathServer.Size = new System.Drawing.Size(217, 20);
+            this.edPathServer.TabIndex = 7;
+            // 
+            // edPathOut
+            // 
+            this.edPathOut.Location = new System.Drawing.Point(92, 69);
+            this.edPathOut.Name = "edPathOut";
+            this.edPathOut.Size = new System.Drawing.Size(217, 20);
+            this.edPathOut.TabIndex = 6;
+            // 
+            // edPathIn
+            // 
+            this.edPathIn.Location = new System.Drawing.Point(92, 43);
+            this.edPathIn.Name = "edPathIn";
+            this.edPathIn.Size = new System.Drawing.Size(217, 20);
+            this.edPathIn.TabIndex = 5;
+            // 
+            // edPathCommand
+            // 
+            this.edPathCommand.Location = new System.Drawing.Point(92, 17);
+            this.edPathCommand.Name = "edPathCommand";
+            this.edPathCommand.Size = new System.Drawing.Size(217, 20);
+            this.edPathCommand.TabIndex = 4;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(7, 98);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(87, 13);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Папка сервера:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(7, 72);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(83, 13);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Папка вывода:\r\n";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(7, 46);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(75, 13);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Папка ввода:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Папка команд:";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.chkRegCancel);
+            this.groupBox5.Controls.Add(this.chkNewProt);
+            this.groupBox5.Controls.Add(this.chkNotFiscal);
+            this.groupBox5.Location = new System.Drawing.Point(3, 3);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(315, 78);
+            this.groupBox5.TabIndex = 1;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Общие настройки";
+            // 
+            // chkRegCancel
+            // 
+            this.chkRegCancel.AutoSize = true;
+            this.chkRegCancel.Location = new System.Drawing.Point(6, 56);
+            this.chkRegCancel.Name = "chkRegCancel";
+            this.chkRegCancel.Size = new System.Drawing.Size(247, 17);
+            this.chkRegCancel.TabIndex = 2;
+            this.chkRegCancel.Text = "Отменарегистрации кассира после оплаты";
+            this.chkRegCancel.UseVisualStyleBackColor = true;
+            // 
+            // chkNewProt
+            // 
+            this.chkNewProt.AutoSize = true;
+            this.chkNewProt.Location = new System.Drawing.Point(6, 38);
+            this.chkNewProt.Name = "chkNewProt";
+            this.chkNewProt.Size = new System.Drawing.Size(180, 17);
+            this.chkNewProt.TabIndex = 1;
+            this.chkNewProt.Text = "Новый протокол каждый день";
+            this.chkNewProt.UseVisualStyleBackColor = true;
+            // 
+            // chkNotFiscal
+            // 
+            this.chkNotFiscal.AutoSize = true;
+            this.chkNotFiscal.Location = new System.Drawing.Point(6, 19);
+            this.chkNotFiscal.Name = "chkNotFiscal";
+            this.chkNotFiscal.Size = new System.Drawing.Size(108, 17);
+            this.chkNotFiscal.TabIndex = 0;
+            this.chkNotFiscal.Text = "Учебный режим";
+            this.chkNotFiscal.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -188,6 +651,15 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Операторы";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // chk_magnet
+            // 
+            this.chk_magnet.Location = new System.Drawing.Point(416, 60);
+            this.chk_magnet.Name = "chk_magnet";
+            this.chk_magnet.Size = new System.Drawing.Size(151, 49);
+            this.chk_magnet.TabIndex = 3;
+            this.chk_magnet.Text = "Авторизация по скан-коду/магнитной карте";
+            this.chk_magnet.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -607,6 +1079,22 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             // 
+            // tb_pingtimeout
+            // 
+            this.tb_pingtimeout.Location = new System.Drawing.Point(97, 192);
+            this.tb_pingtimeout.Name = "tb_pingtimeout";
+            this.tb_pingtimeout.Size = new System.Drawing.Size(157, 20);
+            this.tb_pingtimeout.TabIndex = 12;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(3, 195);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(67, 13);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "ping timeout:";
+            // 
             // tb_basepwd
             // 
             this.tb_basepwd.Location = new System.Drawing.Point(97, 165);
@@ -709,6 +1197,7 @@
             // 
             // btn_apply
             // 
+            this.btn_apply.Enabled = false;
             this.btn_apply.Location = new System.Drawing.Point(499, 398);
             this.btn_apply.Name = "btn_apply";
             this.btn_apply.Size = new System.Drawing.Size(75, 23);
@@ -748,31 +1237,6 @@
             this.btn_upload.UseVisualStyleBackColor = true;
             this.btn_upload.Click += new System.EventHandler(this.btn_upload_Click);
             // 
-            // chk_magnet
-            // 
-            this.chk_magnet.Location = new System.Drawing.Point(416, 60);
-            this.chk_magnet.Name = "chk_magnet";
-            this.chk_magnet.Size = new System.Drawing.Size(151, 49);
-            this.chk_magnet.TabIndex = 3;
-            this.chk_magnet.Text = "Авторизация по скан-коду/магнитной карте";
-            this.chk_magnet.UseVisualStyleBackColor = true;
-            // 
-            // tb_pingtimeout
-            // 
-            this.tb_pingtimeout.Location = new System.Drawing.Point(97, 192);
-            this.tb_pingtimeout.Name = "tb_pingtimeout";
-            this.tb_pingtimeout.Size = new System.Drawing.Size(157, 20);
-            this.tb_pingtimeout.TabIndex = 12;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(3, 195);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(67, 13);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "ping timeout:";
-            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -794,6 +1258,16 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -847,7 +1321,6 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Button btn_check_comment;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_settings;
@@ -879,6 +1352,49 @@
         private System.Windows.Forms.CheckBox chk_magnet;
         private System.Windows.Forms.TextBox tb_pingtimeout;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox edPathServer;
+        private System.Windows.Forms.TextBox edPathOut;
+        private System.Windows.Forms.TextBox edPathIn;
+        private System.Windows.Forms.TextBox edPathCommand;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.CheckBox chkRegCancel;
+        private System.Windows.Forms.CheckBox chkNewProt;
+        private System.Windows.Forms.CheckBox chkNotFiscal;
+        private System.Windows.Forms.ComboBox cbDeviceComport;
+        private System.Windows.Forms.ComboBox cbDeviceType;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cbPrinter;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox edRep;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox cbDrawerComport;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.CheckBox chkAutoFiscal;
+        private System.Windows.Forms.CheckBox chkFiscal;
+        private System.Windows.Forms.CheckBox chkNotDisplay;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.TextBox edLogoY;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.CheckBox chkAnyQuality;
+        private System.Windows.Forms.CheckBox chkNoLimit;
+        private System.Windows.Forms.TextBox edPollPeriod;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.CheckBox chkMaxSum;
+        private System.Windows.Forms.CheckBox chkMaxQuality;
+        private System.Windows.Forms.TextBox edMaxSum;
+        private System.Windows.Forms.TextBox edMaxQuality;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.TextBox textBox10;
     }
 }
 

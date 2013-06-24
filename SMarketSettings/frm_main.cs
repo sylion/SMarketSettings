@@ -60,10 +60,11 @@ namespace SMarketSettings
                 if (wait.DialogResult == System.Windows.Forms.DialogResult.OK)
                 {
                     btn_upload.Enabled = true;
+                    btn_apply.Enabled = true;
                 }
             }
             tabControl1.Enabled = true;
-            tabControl1.SelectedIndex = 0;
+            tabControl1_SelectedIndexChanged(this, e);
             this.Text = "Настройки SMarket - " + current_obj + " - " + current_pos;  
         }
         //Выгрузка настроек
@@ -94,6 +95,7 @@ namespace SMarketSettings
             current_pos = "";
             current_obj = "";
             btn_upload.Enabled = false;
+            btn_apply.Enabled = false;
             tabControl1.Enabled = false;
             this.Text = "Настройки SMarket";
         }
@@ -105,6 +107,34 @@ namespace SMarketSettings
             if (tabControl1.SelectedIndex == 1 || tabControl1.SelectedIndex == 3)
             {
                 tabControl1.SelectedIndex = 0;
+            }
+            //Основные
+            if (tabControl1.SelectedIndex == 0)
+            {
+                chkNotFiscal.Checked = bool.Parse(settings.IniReadValue("General", "flgNotFiscal"));
+                chkNewProt.Checked = bool.Parse(settings.IniReadValue("General", "NewProtEveryDay"));
+                chkRegCancel.Checked = bool.Parse(settings.IniReadValue("General", "flgRegCancel"));
+                edPathCommand.Text = settings.IniReadValue("General", "PathCommand");
+                edPathIn.Text = settings.IniReadValue("General", "PathIn");
+                edPathOut.Text = settings.IniReadValue("General", "PathOut");
+                edPathServer.Text = settings.IniReadValue("General", "PathServer");
+                chkNotDisplay.Checked = bool.Parse(settings.IniReadValue("General", "flgNotDisplay"));
+                chkFiscal.Checked = bool.Parse(settings.IniReadValue("General", "flgFiscal"));
+                chkAutoFiscal.Checked = bool.Parse(settings.IniReadValue("General", "AutoFiscal"));
+                edLogoY.Text = settings.IniReadValue("General", "logoY");
+                chkNoLimit.Checked = bool.Parse(settings.IniReadValue("General", "flgNoLimit"));
+                chkAnyQuality.Checked = bool.Parse(settings.IniReadValue("General", "flgAnyQuantity"));
+                chkMaxQuality.Checked = bool.Parse(settings.IniReadValue("General", "flgMaxQuantity"));
+                chkMaxSum.Checked = bool.Parse(settings.IniReadValue("General", "flgMaxSum"));
+                edMaxQuality.Text = settings.IniReadValue("General", "valMaxQuantity");
+                edMaxSum.Text = settings.IniReadValue("General", "valMaxSum");
+                edPollPeriod.Text = settings.IniReadValue("General", "valPollPeriod");
+                //Только для информации, не сохранять это:
+                cbDeviceType.Text = settings.IniReadValue("General", "DeviceType");
+                cbDeviceComport.Text = "COM" + settings.IniReadValue("General", "DeviceComPort");
+                cbPrinter.Text = settings.IniReadValue("General", "PrinterZebraName");
+                cbDrawerComport.Text = "COM" + settings.IniReadValue("General", "DrawerComPort");
+                edRep.Text = settings.IniReadValue("General", "valRep");
             }
             //Операторы
             if (tabControl1.SelectedIndex == 2)
@@ -372,6 +402,27 @@ namespace SMarketSettings
         private void btn_apply_Click(object sender, EventArgs e)
         {
             IniFile settings = new IniFile(Directory.GetCurrentDirectory() + "\\settings\\" + current_pos + ".ini");
+            if (tabControl1.SelectedIndex == 0)
+            {
+                settings.IniWriteValue("General", "flgNotFiscal", chkNotFiscal.Checked.ToString());
+                settings.IniWriteValue("General", "NewProtEveryDay", chkNewProt.Checked.ToString());
+                settings.IniWriteValue("General", "flgRegCancel", chkRegCancel.Checked.ToString());
+                settings.IniWriteValue("General", "PathCommand", edPathCommand.Text);
+                settings.IniWriteValue("General", "PathIn", edPathIn.Text);
+                settings.IniWriteValue("General", "PathOut", edPathOut.Text);
+                settings.IniWriteValue("General", "PathServer", edPathServer.Text);
+                settings.IniWriteValue("General", "flgNotDisplay", chkNotDisplay.Checked.ToString());
+                settings.IniWriteValue("General", "flgFiscal",chkFiscal.Checked.ToString());
+                settings.IniWriteValue("General", "AutoFiscal", chkAutoFiscal.Checked.ToString());
+                settings.IniWriteValue("General", "logoY", edLogoY.Text);
+                settings.IniWriteValue("General", "flgNoLimit", chkNoLimit.Checked.ToString());
+                settings.IniWriteValue("General", "flgAnyQuantity", chkAnyQuality.Checked.ToString());
+                settings.IniWriteValue("General", "flgMaxQuantity",chkMaxQuality.Checked.ToString());
+                settings.IniWriteValue("General", "flgMaxSum", chkMaxSum.Checked.ToString());
+                settings.IniWriteValue("General", "valMaxQuantity", edMaxQuality.Text);
+                settings.IniWriteValue("General", "valMaxSum", edMaxSum.Text);
+                settings.IniWriteValue("General", "valPollPeriod", edPollPeriod.Text);
+            }
             if (tabControl1.SelectedIndex == 2)
             {
                 settings.IniWriteValue("operators", "UseOnceOperator", chk_once_operator.Checked.ToString());
