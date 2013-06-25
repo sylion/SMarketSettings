@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using Ini;
 using System.IO;
 
@@ -23,6 +24,7 @@ namespace SMarketSettings
             Name = "";
             NewPassword = false;
             HasPassword = false;
+            IsSec = false;
 
         }
         public int Mask { get; set; }
@@ -37,6 +39,7 @@ namespace SMarketSettings
         public bool New { get; set; }
         public bool NewPassword { get; set; }
         public bool HasPassword { get; set; }
+        public bool IsSec { get; set; }
     }
 
     public static class OperatorsControl
@@ -59,6 +62,7 @@ namespace SMarketSettings
                 op[i].NotActive = bool.Parse(settings.IniReadValue("op" + i, "chNotActive"));
                 op[i].Mask = int.Parse(settings.IniReadValue("op" + i, "mask"));
                 op[i].HasPassword = bool.Parse(settings.IniReadValue("op" + i, "HasPassword"));
+                op[i].IsSec = bool.Parse(settings.IniReadValue("op" + i, "IsSecurity"));
                 op[i].Password = "";
                 try
                 {
@@ -120,6 +124,7 @@ namespace SMarketSettings
             {
                 settings.IniWriteValue("op" + i, "name", Op[i].Name);
                 settings.IniWriteValue("op" + i, "id", Op[i].ID.ToString());
+                settings.IniWriteValue("op" + i, "IsSecurity", Op[i].IsSec.ToString());
                 if (Op[i].CashPwd == "")
                 {
                     Op[i].CashPwd = "0";

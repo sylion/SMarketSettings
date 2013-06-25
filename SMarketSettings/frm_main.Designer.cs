@@ -136,6 +136,7 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_load = new System.Windows.Forms.Button();
             this.btn_upload = new System.Windows.Forms.Button();
+            this.chkIsSec = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -663,6 +664,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkIsSec);
             this.groupBox2.Controls.Add(this.richTextBox1);
             this.groupBox2.Controls.Add(this.c13);
             this.groupBox2.Controls.Add(this.c12);
@@ -1237,6 +1239,17 @@
             this.btn_upload.UseVisualStyleBackColor = true;
             this.btn_upload.Click += new System.EventHandler(this.btn_upload_Click);
             // 
+            // chkIsSec
+            // 
+            this.chkIsSec.AutoSize = true;
+            this.chkIsSec.Location = new System.Drawing.Point(408, 92);
+            this.chkIsSec.Name = "chkIsSec";
+            this.chkIsSec.Size = new System.Drawing.Size(63, 17);
+            this.chkIsSec.TabIndex = 14;
+            this.chkIsSec.Text = "Охрана";
+            this.chkIsSec.UseVisualStyleBackColor = true;
+            this.chkIsSec.CheckedChanged += new System.EventHandler(this.chkIsSec_CheckedChanged);
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1249,6 +1262,7 @@
             this.Controls.Add(this.btn_settings);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(594, 465);
             this.MinimumSize = new System.Drawing.Size(594, 465);
             this.Name = "frm_main";
@@ -1395,6 +1409,7 @@
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.CheckBox chkIsSec;
     }
 }
 

@@ -201,6 +201,7 @@ namespace SMarketSettings
             {
                 btn_cancel_pwd.Text = "Отменить пароль";
             }
+            chkIsSec.Checked = Operators[z].IsSec; 
             tb_number.Text = Operators[z].ID.ToString();
             tb_cpwd.Text = Operators[z].CashPwd;
             chk_notactive.Checked = Operators[z].NotActive;
@@ -476,6 +477,8 @@ namespace SMarketSettings
                 c11.Enabled = false;
                 c12.Enabled = false;
                 c13.Enabled = false;
+                chkIsSec.Enabled = false;
+                chkIsSec.Checked = false;
             }
             else
             {
@@ -492,6 +495,7 @@ namespace SMarketSettings
                 c11.Enabled = true;
                 c12.Enabled = true;
                 c13.Enabled = true;
+                chkIsSec.Enabled = true;
             }
         }
         private void c2_CheckedChanged(object sender, EventArgs e)
@@ -652,6 +656,11 @@ namespace SMarketSettings
             catch
             {
             }
+        }
+        //Флаг охранника
+        private void chkIsSec_CheckedChanged(object sender, EventArgs e)
+        {
+             Operators[z].IsSec = chkIsSec.Checked;
         }
     }
 }
