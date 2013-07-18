@@ -19,14 +19,11 @@ namespace SMarketSettings
         public string TempName, TempPwd;
         int z;
         int tmpMask, Mask;
+        string SettingsVersion = "";
 
         public frm_main()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
         }
         //Вызов формы комментариев чека
         private void btn_check_comment_Click(object sender, EventArgs e)
@@ -103,7 +100,7 @@ namespace SMarketSettings
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             IniFile settings = new IniFile(Directory.GetCurrentDirectory() + "\\settings\\" + current_pos + ".ini");
-            if (settings.IniReadValue("default", "SetingsVersion") == "2")
+            if (settings.IniReadValue("default", "SetingsVersion") == SettingsVersion)
             {
                 //Основные
                 if (tabControl1.SelectedIndex == 1 || tabControl1.SelectedIndex == 3)
@@ -675,6 +672,12 @@ namespace SMarketSettings
         private void chkIsSec_CheckedChanged(object sender, EventArgs e)
         {
              Operators[z].IsSec = chkIsSec.Checked;
+        }
+
+        private void frm_main_Load(object sender, EventArgs e)
+        {
+            IniFile cfg = new IniFile(Directory.GetCurrentDirectory() + "\\cfg.ini");
+            SettingsVersion = cfg.IniReadValue("default", "SettingsVersion");
         }
     }
 }

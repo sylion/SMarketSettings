@@ -80,6 +80,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.chk_magnet = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkIsSec = new System.Windows.Forms.CheckBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.c13 = new System.Windows.Forms.CheckBox();
             this.c12 = new System.Windows.Forms.CheckBox();
@@ -136,7 +137,6 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_load = new System.Windows.Forms.Button();
             this.btn_upload = new System.Windows.Forms.Button();
-            this.chkIsSec = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -685,6 +685,17 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Права доступа";
+            // 
+            // chkIsSec
+            // 
+            this.chkIsSec.AutoSize = true;
+            this.chkIsSec.Location = new System.Drawing.Point(408, 92);
+            this.chkIsSec.Name = "chkIsSec";
+            this.chkIsSec.Size = new System.Drawing.Size(63, 17);
+            this.chkIsSec.TabIndex = 14;
+            this.chkIsSec.Text = "Охрана";
+            this.chkIsSec.UseVisualStyleBackColor = true;
+            this.chkIsSec.CheckedChanged += new System.EventHandler(this.chkIsSec_CheckedChanged);
             // 
             // richTextBox1
             // 
@@ -1239,17 +1250,6 @@
             this.btn_upload.UseVisualStyleBackColor = true;
             this.btn_upload.Click += new System.EventHandler(this.btn_upload_Click);
             // 
-            // chkIsSec
-            // 
-            this.chkIsSec.AutoSize = true;
-            this.chkIsSec.Location = new System.Drawing.Point(408, 92);
-            this.chkIsSec.Name = "chkIsSec";
-            this.chkIsSec.Size = new System.Drawing.Size(63, 17);
-            this.chkIsSec.TabIndex = 14;
-            this.chkIsSec.Text = "Охрана";
-            this.chkIsSec.UseVisualStyleBackColor = true;
-            this.chkIsSec.CheckedChanged += new System.EventHandler(this.chkIsSec_CheckedChanged);
-            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1268,7 +1268,7 @@
             this.Name = "frm_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Настройки SMarket";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.frm_main_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
