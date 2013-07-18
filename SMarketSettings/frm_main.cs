@@ -62,10 +62,10 @@ namespace SMarketSettings
                     btn_upload.Enabled = true;
                     btn_apply.Enabled = true;
                 }
-            }
-            tabControl1.Enabled = true;
-            tabControl1_SelectedIndexChanged(this, e);
-            this.Text = "Настройки SMarket - " + current_obj + " - " + current_pos;  
+                tabControl1.Enabled = true;
+                tabControl1_SelectedIndexChanged(this, e);
+                this.Text = "Настройки SMarket - " + current_obj + " - " + current_pos; 
+            } 
         }
         //Выгрузка настроек
         private void btn_upload_Click(object sender, EventArgs e)
@@ -103,81 +103,95 @@ namespace SMarketSettings
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             IniFile settings = new IniFile(Directory.GetCurrentDirectory() + "\\settings\\" + current_pos + ".ini");
-            //Основные
-            if (tabControl1.SelectedIndex == 1 || tabControl1.SelectedIndex == 3)
+            if (settings.IniReadValue("default", "SetingsVersion") == "2")
             {
-                tabControl1.SelectedIndex = 0;
-            }
-            //Основные
-            if (tabControl1.SelectedIndex == 0)
-            {
-                chkNotFiscal.Checked = bool.Parse(settings.IniReadValue("General", "flgNotFiscal"));
-                chkNewProt.Checked = bool.Parse(settings.IniReadValue("General", "NewProtEveryDay"));
-                chkRegCancel.Checked = bool.Parse(settings.IniReadValue("General", "flgRegCancel"));
-                edPathCommand.Text = settings.IniReadValue("General", "PathCommand");
-                edPathIn.Text = settings.IniReadValue("General", "PathIn");
-                edPathOut.Text = settings.IniReadValue("General", "PathOut");
-                edPathServer.Text = settings.IniReadValue("General", "PathServer");
-                chkNotDisplay.Checked = bool.Parse(settings.IniReadValue("General", "flgNotDisplay"));
-                chkFiscal.Checked = bool.Parse(settings.IniReadValue("General", "flgFiscal"));
-                chkAutoFiscal.Checked = bool.Parse(settings.IniReadValue("General", "AutoFiscal"));
-                edLogoY.Text = settings.IniReadValue("General", "logoY");
-                chkNoLimit.Checked = bool.Parse(settings.IniReadValue("General", "flgNoLimit"));
-                chkAnyQuality.Checked = bool.Parse(settings.IniReadValue("General", "flgAnyQuantity"));
-                chkMaxQuality.Checked = bool.Parse(settings.IniReadValue("General", "flgMaxQuantity"));
-                chkMaxSum.Checked = bool.Parse(settings.IniReadValue("General", "flgMaxSum"));
-                edMaxQuality.Text = settings.IniReadValue("General", "valMaxQuantity");
-                edMaxSum.Text = settings.IniReadValue("General", "valMaxSum");
-                edPollPeriod.Text = settings.IniReadValue("General", "valPollPeriod");
-                //Только для информации, не сохранять это:
-                cbDeviceType.Text = settings.IniReadValue("General", "DeviceType");
-                cbDeviceComport.Text = "COM" + settings.IniReadValue("General", "DeviceComPort");
-                cbPrinter.Text = settings.IniReadValue("General", "PrinterZebraName");
-                cbDrawerComport.Text = "COM" + settings.IniReadValue("General", "DrawerComPort");
-                edRep.Text = settings.IniReadValue("General", "valRep");
-            }
-            //Операторы
-            if (tabControl1.SelectedIndex == 2)
-            {
-                Operators = OperatorsControl.LoadOperators(current_pos);
-                cb_name.Items.Clear();
-                for (int i = 0; i < Operators.Length; i++)
+                //Основные
+                if (tabControl1.SelectedIndex == 1 || tabControl1.SelectedIndex == 3)
                 {
-                    if (!Operators[i].ForDelete)
+                    tabControl1.SelectedIndex = 0;
+                }
+                //Основные
+                if (tabControl1.SelectedIndex == 0)
+                {
+                    chkNotFiscal.Checked = bool.Parse(settings.IniReadValue("General", "flgNotFiscal"));
+                    chkNewProt.Checked = bool.Parse(settings.IniReadValue("General", "NewProtEveryDay"));
+                    chkRegCancel.Checked = bool.Parse(settings.IniReadValue("General", "flgRegCancel"));
+                    edPathCommand.Text = settings.IniReadValue("General", "PathCommand");
+                    edPathIn.Text = settings.IniReadValue("General", "PathIn");
+                    edPathOut.Text = settings.IniReadValue("General", "PathOut");
+                    edPathServer.Text = settings.IniReadValue("General", "PathServer");
+                    chkNotDisplay.Checked = bool.Parse(settings.IniReadValue("General", "flgNotDisplay"));
+                    chkFiscal.Checked = bool.Parse(settings.IniReadValue("General", "flgFiscal"));
+                    chkAutoFiscal.Checked = bool.Parse(settings.IniReadValue("General", "AutoFiscal"));
+                    edLogoY.Text = settings.IniReadValue("General", "logoY");
+                    chkNoLimit.Checked = bool.Parse(settings.IniReadValue("General", "flgNoLimit"));
+                    chkAnyQuality.Checked = bool.Parse(settings.IniReadValue("General", "flgAnyQuantity"));
+                    chkMaxQuality.Checked = bool.Parse(settings.IniReadValue("General", "flgMaxQuantity"));
+                    chkMaxSum.Checked = bool.Parse(settings.IniReadValue("General", "flgMaxSum"));
+                    edMaxQuality.Text = settings.IniReadValue("General", "valMaxQuantity");
+                    edMaxSum.Text = settings.IniReadValue("General", "valMaxSum");
+                    edPollPeriod.Text = settings.IniReadValue("General", "valPollPeriod");
+                    //Только для информации, не сохранять это:
+                    cbDeviceType.Text = settings.IniReadValue("General", "DeviceType");
+                    cbDeviceComport.Text = "COM" + settings.IniReadValue("General", "DeviceComPort");
+                    cbPrinter.Text = settings.IniReadValue("General", "PrinterZebraName");
+                    cbDrawerComport.Text = "COM" + settings.IniReadValue("General", "DrawerComPort");
+                    edRep.Text = settings.IniReadValue("General", "valRep");
+                }
+                //Операторы
+                if (tabControl1.SelectedIndex == 2)
+                {
+                    Operators = OperatorsControl.LoadOperators(current_pos);
+                    cb_name.Items.Clear();
+                    for (int i = 0; i < Operators.Length; i++)
                     {
-                        cb_name.Items.Add(Operators[i].Name);
+                        if (!Operators[i].ForDelete)
+                        {
+                            cb_name.Items.Add(Operators[i].Name);
+                        }
+                        else
+                        {
+                            cb_name.Items.Add(Operators[i].Name + " - ForDelete");
+                        }
                     }
-                    else
+                    chk_once_operator.Checked = bool.Parse(settings.IniReadValue("operators", "UseOnceOperator"));
+                    chk_magnet.Checked = bool.Parse(settings.IniReadValue("operators", "MagnetCode"));
+                    cb_name.SelectedIndex = 0;
+                }
+                //Заказы
+                if (tabControl1.SelectedIndex == 4)
+                {
+                    try
                     {
-                        cb_name.Items.Add(Operators[i].Name + " - ForDelete");
+                        chk_orderisactive.Checked = bool.Parse(settings.IniReadValue("Restaurant", "order_isactive"));
+                        tb_serveraddress.Text = settings.IniReadValue("Restaurant", "order_host");
+                        tb_serverport.Text = settings.IniReadValue("Restaurant", "order_port");
+                        tb_basename.Text = settings.IniReadValue("Restaurant", "order_bname");
+                        tb_baselogin.Text = settings.IniReadValue("Restaurant", "order_login");
+                        tb_basepwd.Text = settings.IniReadValue("Restaurant", "order_pwd");
+                        tb_pingtimeout.Text = settings.IniReadValue("Restaurant", "ping_timeout");
+                        chk_servicemode.Checked = bool.Parse(settings.IniReadValue("Restaurant", "servicemode"));
+                        tb_precheckcommit1.Text = settings.IniReadValue("Restaurant", "precheck_coommit1");
+                        tb_precheckcommit2.Text = settings.IniReadValue("Restaurant", "precheck_coommit2");
+                        tb_precheckcommit3.Text = settings.IniReadValue("Restaurant", "precheck_coommit3");
+                        tb_precheckcommit4.Text = settings.IniReadValue("Restaurant", "precheck_coommit4");
+                        tb_precheckcommit5.Text = settings.IniReadValue("Restaurant", "precheck_coommit5");
+                    }
+                    catch
+                    {
                     }
                 }
-                chk_once_operator.Checked = bool.Parse(settings.IniReadValue("operators", "UseOnceOperator"));
-                chk_magnet.Checked = bool.Parse(settings.IniReadValue("operators", "MagnetCode"));
-                cb_name.SelectedIndex = 0;
             }
-            //Заказы
-            if (tabControl1.SelectedIndex == 4)
+            else
             {
-                try
-                {
-                    chk_orderisactive.Checked = bool.Parse(settings.IniReadValue("Restaurant", "order_isactive"));
-                    tb_serveraddress.Text = settings.IniReadValue("Restaurant", "order_host");
-                    tb_serverport.Text = settings.IniReadValue("Restaurant", "order_port");
-                    tb_basename.Text = settings.IniReadValue("Restaurant", "order_bname");
-                    tb_baselogin.Text = settings.IniReadValue("Restaurant", "order_login");
-                    tb_basepwd.Text = settings.IniReadValue("Restaurant", "order_pwd");
-                    tb_pingtimeout.Text = settings.IniReadValue("Restaurant", "ping_timeout");
-                    chk_servicemode.Checked = bool.Parse(settings.IniReadValue("Restaurant", "servicemode"));
-                    tb_precheckcommit1.Text = settings.IniReadValue("Restaurant", "precheck_coommit1");
-                    tb_precheckcommit2.Text = settings.IniReadValue("Restaurant", "precheck_coommit2");
-                    tb_precheckcommit3.Text = settings.IniReadValue("Restaurant", "precheck_coommit3");
-                    tb_precheckcommit4.Text = settings.IniReadValue("Restaurant", "precheck_coommit4");
-                    tb_precheckcommit5.Text = settings.IniReadValue("Restaurant", "precheck_coommit5");
-                }
-                catch
-                {
-                }
+                MessageBox.Show("Файл настроек поврежден или имеет старую версию", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                File.Delete(settings.path);
+                current_pos = "";
+                current_obj = "";
+                btn_upload.Enabled = false;
+                btn_apply.Enabled = false;
+                tabControl1.Enabled = false;
+                this.Text = "Настройки SMarket";
             }
         }
         //Выбор оператора
