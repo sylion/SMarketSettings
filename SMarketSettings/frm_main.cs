@@ -153,6 +153,7 @@ namespace SMarketSettings
                     }
                     chk_once_operator.Checked = bool.Parse(settings.IniReadValue("operators", "UseOnceOperator"));
                     chk_magnet.Checked = bool.Parse(settings.IniReadValue("operators", "MagnetCode"));
+                    chk_Otborka.Checked = bool.Parse(settings.IniReadValue("operators", "Otborka"));
                     cb_name.SelectedIndex = 0;
                 }
                 //Заказы
@@ -439,6 +440,7 @@ namespace SMarketSettings
             {
                 settings.IniWriteValue("operators", "UseOnceOperator", chk_once_operator.Checked.ToString());
                 settings.IniWriteValue("operators", "MagnetCode", chk_magnet.Checked.ToString());
+                settings.IniWriteValue("operators", "Otborka", chk_Otborka.Checked.ToString());
                 OperatorsControl.SaveOperators(current_pos, Operators);
             }
             if (tabControl1.SelectedIndex == 4)

@@ -137,6 +137,7 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_load = new System.Windows.Forms.Button();
             this.btn_upload = new System.Windows.Forms.Button();
+            this.chk_Otborka = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -642,6 +643,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.chk_Otborka);
             this.tabPage3.Controls.Add(this.chk_magnet);
             this.tabPage3.Controls.Add(this.groupBox2);
             this.tabPage3.Controls.Add(this.chk_once_operator);
@@ -655,7 +657,7 @@
             // 
             // chk_magnet
             // 
-            this.chk_magnet.Location = new System.Drawing.Point(416, 60);
+            this.chk_magnet.Location = new System.Drawing.Point(416, 44);
             this.chk_magnet.Name = "chk_magnet";
             this.chk_magnet.Size = new System.Drawing.Size(151, 49);
             this.chk_magnet.TabIndex = 3;
@@ -1250,11 +1252,21 @@
             this.btn_upload.UseVisualStyleBackColor = true;
             this.btn_upload.Click += new System.EventHandler(this.btn_upload_Click);
             // 
+            // chk_Otborka
+            // 
+            this.chk_Otborka.AutoSize = true;
+            this.chk_Otborka.Location = new System.Drawing.Point(416, 98);
+            this.chk_Otborka.Name = "chk_Otborka";
+            this.chk_Otborka.Size = new System.Drawing.Size(125, 17);
+            this.chk_Otborka.TabIndex = 4;
+            this.chk_Otborka.Text = "Разрешить отборку";
+            this.chk_Otborka.UseVisualStyleBackColor = true;
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(578, 426);
+            this.ClientSize = new System.Drawing.Size(578, 427);
             this.Controls.Add(this.btn_upload);
             this.Controls.Add(this.btn_load);
             this.Controls.Add(this.btn_close);
@@ -1285,6 +1297,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1410,6 +1423,7 @@
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.CheckBox chkIsSec;
+        private System.Windows.Forms.CheckBox chk_Otborka;
     }
 }
 
