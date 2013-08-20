@@ -19,7 +19,7 @@ namespace SMarketSettings
         public string TempName, TempPwd;
         int z;
         int tmpMask, Mask;
-        string SettingsVersion = "";
+        string SettingsVersion = "20130820";
 
         public frm_main()
         {
@@ -54,15 +54,18 @@ namespace SMarketSettings
                 Form wait = new frm_wait();
                 wait.Owner = this;
                 wait.ShowDialog();
-                if (wait.DialogResult == System.Windows.Forms.DialogResult.OK)
+                if (File.Exists(Directory.GetCurrentDirectory() + "\\Settings\\" + current_pos + ".ini"))
                 {
-                    btn_upload.Enabled = true;
-                    btn_apply.Enabled = true;
+                    if (wait.DialogResult == System.Windows.Forms.DialogResult.OK)
+                    {
+                        btn_upload.Enabled = true;
+                        btn_apply.Enabled = true;
+                    }
+                    tabControl1.Enabled = true;
+                    tabControl1_SelectedIndexChanged(this, e);
+                    this.Text = "Настройки SMarket - " + current_obj + " - " + current_pos;
                 }
-                tabControl1.Enabled = true;
-                tabControl1_SelectedIndexChanged(this, e);
-                this.Text = "Настройки SMarket - " + current_obj + " - " + current_pos; 
-            } 
+            }
         }
         //Выгрузка настроек
         private void btn_upload_Click(object sender, EventArgs e)
@@ -100,7 +103,7 @@ namespace SMarketSettings
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             IniFile settings = new IniFile(Directory.GetCurrentDirectory() + "\\settings\\" + current_pos + ".ini");
-            if (settings.IniReadValue("default", "SetingsVersion") == SettingsVersion)
+            if (settings.IniReadValue("default", "SettingsVersion") == SettingsVersion)
             {
                 //Основные
                 if (tabControl1.SelectedIndex == 1 || tabControl1.SelectedIndex == 3)
@@ -213,11 +216,12 @@ namespace SMarketSettings
             {
                 btn_cancel_pwd.Text = "Отменить пароль";
             }
-            chkIsSec.Checked = Operators[z].IsSec; 
+            chkIsSec.Checked = Operators[z].IsSec;
             tb_number.Text = Operators[z].ID.ToString();
             tb_cpwd.Text = Operators[z].CashPwd;
             chk_notactive.Checked = Operators[z].NotActive;
             tmpMask = Operators[z].Mask;
+
             Mask = tmpMask;
             if (tmpMask == 8191)
             {
@@ -425,12 +429,12 @@ namespace SMarketSettings
                 settings.IniWriteValue("General", "PathOut", edPathOut.Text);
                 settings.IniWriteValue("General", "PathServer", edPathServer.Text);
                 settings.IniWriteValue("General", "flgNotDisplay", chkNotDisplay.Checked.ToString());
-                settings.IniWriteValue("General", "flgFiscal",chkFiscal.Checked.ToString());
+                settings.IniWriteValue("General", "flgFiscal", chkFiscal.Checked.ToString());
                 settings.IniWriteValue("General", "AutoFiscal", chkAutoFiscal.Checked.ToString());
                 settings.IniWriteValue("General", "logoY", edLogoY.Text);
                 settings.IniWriteValue("General", "flgNoLimit", chkNoLimit.Checked.ToString());
                 settings.IniWriteValue("General", "flgAnyQuantity", chkAnyQuality.Checked.ToString());
-                settings.IniWriteValue("General", "flgMaxQuantity",chkMaxQuality.Checked.ToString());
+                settings.IniWriteValue("General", "flgMaxQuantity", chkMaxQuality.Checked.ToString());
                 settings.IniWriteValue("General", "flgMaxSum", chkMaxSum.Checked.ToString());
                 settings.IniWriteValue("General", "valMaxQuantity", edMaxQuality.Text);
                 settings.IniWriteValue("General", "valMaxSum", edMaxSum.Text);
@@ -673,13 +677,12 @@ namespace SMarketSettings
         //Флаг охранника
         private void chkIsSec_CheckedChanged(object sender, EventArgs e)
         {
-             Operators[z].IsSec = chkIsSec.Checked;
+            Operators[z].IsSec = chkIsSec.Checked;
         }
 
         private void frm_main_Load(object sender, EventArgs e)
         {
             IniFile cfg = new IniFile(Directory.GetCurrentDirectory() + "\\cfg.ini");
-            SettingsVersion = cfg.IniReadValue("default", "SettingsVersion");
         }
     }
 }
